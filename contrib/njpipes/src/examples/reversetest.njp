@@ -1,0 +1,6 @@
+pipe (reversetest import tests. )
+
+   gen 100  !
+   reverse !
+   locate /0/ !
+   console

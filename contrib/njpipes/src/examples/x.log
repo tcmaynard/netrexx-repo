@@ -1,0 +1,48 @@
+     --- tcpclient.nrx [Thread-2,njPipes]
+ 227 *=*             selectAnyInput()
+ 229 *=*             select
+ 231 *=*                when inStreamNumber()=0
+     >>> "0"
+ 239 *=*                when inStreamNumber()=-2
+     >>> "1"
+     *=*                                         then
+     *=*                                              do
+ 241 *=*                   do protect et
+ 242 *=*                      selectOutput(0)            -- pass it along protecting
+     >>> "0"
+ 243 *=*                      shortStreams()
+ 255 *=*    catch StageError
+ 256 *=*       if rc()>rc
+     >>> "0"
+ 263 *=*    finally
+ 264 *=*       do protect et
+ 266 *=*          if linger>0
+     >>> "1"
+     *=*                      then
+     *=*                           do
+ 267 *=*             et.wait(linger)
+     >>> "100"
+ 269 *=*          end
+ 271 *=*          if counter(0)>0
+     >>> "0"
+     >>> "0"
+ 274 *=*          if soc<>null
+     >>> "1"
+     *=*                       then
+     *=*                            do
+ 275 *=*             soc.close()
+ 277 *=*          end
+ 279 *=*       end
+ 280 *=*    end
+ 282 *=* do
+ 283 *=*    if rc<=4
+     >>> "1"
+     *=*             then
+ 284 *=*       rc = 12
+     >p> rc "12"
+ 285 *=*    selectOutput(1)
+     >>> "1"
+ 287 *=* catch StageError
+ 288 *=* end
+ 290 *=* exit(rc*(rc<>12))
+     >>> "0"

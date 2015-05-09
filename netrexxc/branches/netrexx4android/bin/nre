@@ -1,0 +1,266 @@
+#!/bin/bash
+# ---------------------------------------------------------------------------
+#
+#  BASH script to batch execute NetRexx plain text files and shebang utility
+#
+#  REQUIRES: sed: a stream editor for filtering and transforming text
+#
+#  REMINDER: place in PATH and set executable: chmod 751 nre
+#
+#  Copyright (C) 2014 Jason Monroe Martin agrellum@gmail.com
+#
+#  Distributed under the ICU 1.8.1 Licence with NO WARRANTIES of ANY kind.
+#  See LICENSE for the licence and information on using, copying, modifying,
+#  and distributing this program.
+#
+#  2014.01.13 -- Initial version
+#  2014.01.16 -- Bug fixes, less variables , reduce permissions , passes test
+#  2014.01.19 -- Fix typo in help example and clean code comments
+# ---------------------------------------------------------------------------
+
+if [ "$0" = "./nre" ]; then
+  echo "Script should not be run as $0"
+  echo "It will not result in a portable shebang"
+  echo "Run with a full PATH or simply nre"
+  echo "Example: nre one.nrx two.nrx three.nrx"
+  exit 1
+fi
+
+KEEPSPACE=" "
+
+MYSHEBANG="#!"$0
+
+NRX_FILES=0
+
+# Default options
+OUR_OPTS="-nologo -verbose0 -exec"
+
+PATTERN=""
+
+TMP_OPTS=""
+
+USE_CHMOD="NO"
+
+VERSION="1.0.3"
+
+execute_netrexx () {
+  HAD_SHEBANG="NO"
+  delete_shebang
+  java org.netrexx.process.NetRexxC "$thisFILE" $USE_OPTS
+  if [ "$HAD_SHEBANG" = "YES" ]; then
+    insert_shebang
+  fi
+}
+
+insert_shebang () {
+  verify_shebang
+  if [ "$FIRST_LINE" != "$MYSHEBANG" ]; then
+    sed -i 1i\ "$MYSHEBANG" "$thisFILE"
+    if [ "$USE_CHMOD" = "YES" ]; then
+      chmod 700 "$thisFILE"
+    fi
+  fi
+}
+
+delete_shebang () {
+  verify_shebang
+  if [ "$FIRST_LINE" = "$MYSHEBANG" ]; then
+    sed -i 1d "$thisFILE"
+    HAD_SHEBANG="YES"
+    if [ "$USE_CHMOD" = "YES" ]; then
+      chmod 600 "$thisFILE"
+    fi
+  fi
+}
+
+verify_shebang () {
+  FIRST_LINE=`sed 1q "$thisFILE"`
+}
+
+process_group () {
+
+  if [ -z "$TMP_OPTS" ]; then
+    # Use default options if none were given
+    USE_OPTS=$OUR_OPTS
+  else
+    # Check if any options override defaults
+    if [ `expr index "$TMP_OPTS" "-"` -eq 0 ]; then
+      # If not, they are depend files, so use default along with them
+      USE_OPTS=$OUR_OPTS$KEEPSPACE$TMP_OPTS
+    else
+      # If any were found, use only them
+      USE_OPTS=$TMP_OPTS
+    fi
+    # Reset for next group
+    TMP_OPTS=""
+  fi
+
+# Run
+  case "$RUN_MODE" in
+    "insert" ) insert_shebang;;
+    "delete" ) delete_shebang;;
+    "examine" ) echo \"$thisFILE\" \"$USE_OPTS\";;
+    "execute" ) execute_netrexx;;
+  esac
+}
+
+usage() {
+  cat <<EOF
+`basename $0` $VERSION, a NetRexx plain text file executor and shebang utility
+Usage: $0 [ --chmod ] [Option] [Files [NetRexx Options]]
+
+--chmod:               Allow chmod 700 on insert / chmod 600 on delete shebang
+                       ######### LOWEST POSSIBLE USABLE PERMISSIONS #########
+Options:
+  -a, --add                insert shebang in [Files]
+  -d, --delete             delete shebang from [Files]
+  -e, --examine            do nothing, echo quoted processing
+  -h, --help, ?            print this help, then exit
+  -v, --version            print name and version number, then exit
+  (If none are passed)     begin executing [Files]
+
+Files:
+  One or more plain text NetRexx files with extension .nrx separated by spaces
+  To execute a file that depends on others, only the first should include
+   the .nrx extension. (nre One.nrx two three four)
+
+NetRexx Options:
+  Each file can be followed with any of the NetRexx options except "-run"
+  This overrides the script default of "-nologo -verbose0 -exec"
+  All [NetRexx Options] are ignored when an add or delete option is used
+
+Example: nre --chmod -a hello.nrx
+    ./hello.nrx from the command prompt runs file
+
+NOTE: [Files] with a shebang are not usable by plain NetRexx
+      Use the delete shebang option to restore them
+
+EOF
+exit 0
+}
+
+if test $# -eq 0; then
+  usage
+fi
+
+case "$1" in
+  "--chmod" ) USE_CHMOD="YES"; shift;;
+esac
+
+if test $# -eq 0; then
+  usage
+fi
+
+case "$1" in
+  "-a" | "--add" ) RUN_MODE="insert"; shift;;
+  "-d" | "--delete" ) RUN_MODE="delete"; shift;;
+  "-e" | "--examine" ) RUN_MODE="examine"; shift;;
+  "-h" | "--help" | ? ) usage;;
+  "-v" | "--version" ) echo `basename $0` $VERSION; exit 0;;
+  * ) RUN_MODE="execute";;
+esac
+
+if test $# -eq 0; then
+  usage
+fi
+
+# PASS 1 - Check for usable arguments and set type for later
+
+for thisARG; do
+
+  if [ "$RUN_MODE" = "examine" ]; then
+    echo \"$thisARG\"
+  fi
+
+  # Does it end with the .nrx extension
+  if [[ `expr match "$thisARG" '.*\([\.][Nn][Rr][Xx]\)'` ]]; then
+    # Test for regular file
+    if [ -f "$thisARG" ]; then
+      # Test writable
+      if [ -w "$thisARG" ]; then
+        # If this is the first file
+        if [ "$NRX_FILES" -eq 0 ]; then
+          # No data should have appeared before it
+          if [ ! -z "$PATTERN" ]; then
+            echo "ERROR: DATA FOUND BEFORE FIRST FILE"
+            exit 1
+          fi
+        fi
+        # Mark as file
+        PATTERN=$PATTERN"F"
+        # Count file
+        ((NRX_FILES++))
+      else
+        echo "ERROR: $thisARG : NO WRITE PERMISSIONS"
+        exit 1
+      fi
+    else
+      echo "ERROR: $thisARG : NOT A REGULAR FILE or DOES NOT EXIST"
+      exit 1
+    fi
+  else
+    # Mark as option
+    PATTERN=$PATTERN"O"
+  fi
+done
+
+# Check if we have anything to work with
+if [ $NRX_FILES = 0 ]; then
+  echo "ERROR: NO [Files] FOUND."
+  echo "Did you use .nrx extension?"
+  exit 1
+fi
+
+# PASS 2 - Build groups to process
+declare -i STR_POS
+STR_POS=0
+
+for myARG; do
+
+  # Check how we marked argument
+  if [ ${PATTERN:STR_POS:1} = "F" ]; then
+    # It's a file; grab it
+    thisFILE=$myARG
+    # Set up to look ahead
+    NEXTPOS=$STR_POS
+    let "NEXTPOS += 1"
+    # Test if we can
+    if [ "$NEXTPOS" -lt "$#" ]; then
+      # Check if next argument is another file
+      if [ ${PATTERN:NEXTPOS:1} = "F" ]; then
+        # Found one, so process this one
+        process_group
+      fi
+    fi
+  else
+    # It's a option; grab it
+    TMP_OPTS=$TMP_OPTS$myARG
+    # Set up to look ahead
+    NEXTPOS=$STR_POS
+    let "NEXTPOS += 1"
+    # Test if we can
+    if [ "$NEXTPOS" -lt "$#" ]; then
+      # Check if next argument is another file
+      if [ ${PATTERN:NEXTPOS:1} = "F" ]; then
+        # Found one, so process this one
+        process_group
+      else
+        # It was an option, so add a space after this one
+        TMP_OPTS=$TMP_OPTS$KEEPSPACE
+      fi
+    fi
+  fi
+
+  # Increment STR_POS to match argument number
+  ((STR_POS++))
+
+  # When no look ahead is possible
+  if [ "$STR_POS" -eq $# ]; then
+    # Process remaining
+    process_group
+  fi
+
+done
+
+exit 0
+

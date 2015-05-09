@@ -1,0 +1,62 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program nfindtest.nrx
+Program nfindtest1.nrx
+Program notinsidetest1.nrx
+Program notinsidetest2.nrx
+Program notinsidetest3.nrx
+Program notinsidetest4.nrx
+Program notinsidetest5.nrx
+Program notinsidetest6.nrx
+Program notinsidetest7.nrx
+Program outsidetest1.nrx
+Program outsidetest2.nrx
+Program outsidetest3.nrx
+Program outsidetest4.nrx
+Program outsidetest5.nrx
+Program outsidetest6.nrx
+Program outsidetest7.nrx
+Program overtest_overpipe.nrx
+Program overtest.nrx
+Program padt1.nrx
+Program padt2.nrx
+Program padt3.nrx
+Program padt4.nrx
+Program padt5.nrx
+Program pickt1.nrx
+Program pickt2.nrx
+Program pickt3.nrx
+Program pickt4.nrx
+Program pickt5.nrx
+Program prefixtest.nrx
+Program reversetest.nrx
+Compilation of 'nfindtest.nrx' successful
+Compilation of 'nfindtest1.nrx' successful
+Compilation of 'notinsidetest1.nrx' successful
+Compilation of 'notinsidetest2.nrx' successful
+Compilation of 'notinsidetest3.nrx' successful
+Compilation of 'notinsidetest4.nrx' successful
+Compilation of 'notinsidetest5.nrx' successful
+Compilation of 'notinsidetest6.nrx' successful
+Compilation of 'notinsidetest7.nrx' successful
+Compilation of 'outsidetest1.nrx' successful
+Compilation of 'outsidetest2.nrx' successful
+Compilation of 'outsidetest3.nrx' successful
+Compilation of 'outsidetest4.nrx' successful
+Compilation of 'outsidetest5.nrx' successful
+Compilation of 'outsidetest6.nrx' successful
+Compilation of 'outsidetest7.nrx' successful
+Compilation of 'overtest_overpipe.nrx' successful
+Compilation of 'overtest.nrx' successful
+Compilation of 'padt1.nrx' successful
+Compilation of 'padt2.nrx' successful
+Compilation of 'padt3.nrx' successful
+Compilation of 'padt4.nrx' successful
+Compilation of 'padt5.nrx' successful
+Compilation of 'pickt1.nrx' successful
+Compilation of 'pickt2.nrx' successful
+Compilation of 'pickt3.nrx' successful
+Compilation of 'pickt4.nrx' successful
+Compilation of 'pickt5.nrx' successful
+Compilation of 'prefixtest.nrx' successful
+Compilation of 'reversetest.nrx' successful

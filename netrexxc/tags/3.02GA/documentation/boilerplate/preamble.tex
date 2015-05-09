@@ -1,0 +1,39 @@
+ \documentclass[10pt]{book}
+\usepackage[FINAL]{../boilerplate/rexx} 
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{fontspec} 
+\setmainfont[Mapping=tex-text]{Garamond Premier Pro}
+\setmonofont[Mapping=tex-text,Scale=0.85]{Inconsolata}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{makeidx}
+\usepackage[all]{xy}
+%\usepackage{lingmacros}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{alltt}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{listings}
+\makeatletter
+\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+\@empty\z@\@empty
+\makeatother
+\input{../boilerplate/netrexxformat}
+\usepackage{../boilerplate/rail}
+\usepackage{pst-barcode,pstricks-add}
+\hyphenation{Net-Rexx Net-Rexx-A Net-Rexx-C Net-Rexx-R Mac-OSX infra-structure}
+\makeindex
+\DeclareGraphicsExtensions{.jpg,.png}
+\newcommand{\nr}{NetRexx}
+\newcommand{\nrversion}{3.02} 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

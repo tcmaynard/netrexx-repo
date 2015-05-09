@@ -1,0 +1,36 @@
+package org.netrexx.process
+
+/**
+ * Class NrVersion implements all metadata associated with a NetRexx translator version
+ * Requirements: this data should be in one place, independent of build tooling.
+ * It should be used by build tools and documentation generation processes.   
+ * Created on: Thu, 11, Jul 2013 22:42:28 +0200 by rvj
+ */
+class NrVersion
+
+  properties private
+  version = '3.04'
+  procdate='01 Jun 2015' /* of the language processor */
+  copyright='Copyright (c) RexxLA, 2011,2015.   All rights reserved.\nParts Copyright (c) IBM Corporation, 1995,2008.'
+  mod = 'RC1'
+  
+  /**
+   * Default constructor
+   */
+  method NrVersion()
+    return
+
+  method getVersion()
+    return this.version
+
+  method getFullVersion()
+    return this.version this.mod
+
+  method getProcdate()
+    return this.procdate
+
+  method getCopyright()
+    return this.copyright
+
+  method main(args=String[]) static
+    say NrVersion().getFullVersion()

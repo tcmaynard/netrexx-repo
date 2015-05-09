@@ -1,0 +1,36 @@
+pipe (writepipe)
+
+   stem o !
+   diskw {}
+
+pipe (processNjp end ?)
+
+   diskr {fin} !
+a: filternjp {xout} !
+   pipe2nrx !
+c: faninany !
+   join * / / !
+   stemw f ?
+a: !
+   diskw {xout}.nrx ?
+a: !
+   c: ?
+a: !
+   diskw {xout}.java ?
+a: !
+   diskw {xout}.nrx
+
+pipe (readconfig)
+
+   diskr {} !
+   stem d
+
+pipe (readgroup end ?)
+
+   diskr {} !
+   chop before string /--/ !
+   append var new !
+   join * / / !
+   stem new
+
+

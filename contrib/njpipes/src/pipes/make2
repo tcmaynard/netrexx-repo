@@ -1,0 +1,1 @@
+java -ms4M COM.ibm.netrexx.process.NetRexxC -savelog compiler filterNjp pipe2nrx processNjp readconfig readgroup writepipe

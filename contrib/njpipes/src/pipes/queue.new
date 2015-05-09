@@ -1,0 +1,65 @@
+package org.netrexx.njpipes.pipes
+
+class Iqueue extends object shared
+
+properties private
+
+head  = element
+tail  = element
+
+method Iqueue()
+
+head = null
+tail = null
+
+method push(t=int,n=node) protect
+
+head = element(t,head,n)
+if tail=null then
+   tail = e
+
+
+method queue(e=element) protect
+
+tail.next = e
+tail = e
+e.next = null
+if head=null then
+   head=e
+
+
+method pop() returns element protect
+
+if head=null then
+   return null
+t = head
+head = head.next
+if head=null then
+   tail = null
+return t
+
+
+method peek() returns element protect
+
+return head
+
+
+class element extends object shared
+
+next = element
+data = node
+type = int
+
+-- 0 commit
+-- 1 severInput
+-- 2 severOutput
+-- 3 changemonitor
+-- 4 iputConnected
+-- 5 outputConnected
+
+method element(t=int,e=element,n=node)
+
+next = e
+data = n
+type = t
+

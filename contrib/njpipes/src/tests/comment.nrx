@@ -1,0 +1,20 @@
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+-- WARNING this stage will be dropped when CHOP and SPEC are implemented
+
+class comment extends stage
+
+method run() public
+
+   loop forever
+      line = Rexx peekto()
+      parse line source '-- ' .
+      output(source)
+      readto()
+   catch StageError
+      rc = rc()
+   end
+
+exit(rc*(rc<>12))
+

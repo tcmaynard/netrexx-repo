@@ -1,0 +1,30 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program xlatetest1.nrx
+Program xlatetest2.nrx
+Program xranget1.nrx
+Program xrangetest.nrx
+Program zips.nrx
+Program zonet1.nrx
+Program zonet2.nrx
+Program zonet3.nrx
+Program zonet4.nrx
+Program zonet5.nrx
+Program zonet6.nrx
+Program zonet7.nrx
+Program zonet8.nrx
+Program zonet9.nrx
+Compilation of 'xlatetest1.nrx' successful
+Compilation of 'xlatetest2.nrx' successful
+Compilation of 'xranget1.nrx' successful
+Compilation of 'xrangetest.nrx' successful
+Compilation of 'zips.nrx' successful [2 classes]
+Compilation of 'zonet1.nrx' successful [2 classes]
+Compilation of 'zonet2.nrx' successful [3 classes]
+Compilation of 'zonet3.nrx' successful [3 classes]
+Compilation of 'zonet4.nrx' successful [3 classes]
+Compilation of 'zonet5.nrx' successful [2 classes]
+Compilation of 'zonet6.nrx' successful [2 classes]
+Compilation of 'zonet7.nrx' successful [2 classes]
+Compilation of 'zonet8.nrx' successful [2 classes]
+Compilation of 'zonet9.nrx' successful [2 classes]

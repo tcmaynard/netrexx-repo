@@ -1,0 +1,382 @@
+\chapter{Installation}
+This chapter of the document tells you how to unpack, install, and test the \nr{} translator package. This will install documentation, samples, and executables. It will first state some generic steps that are sufficient for most users. The appendices contain very specific instructions for a range of platforms that \nr{} is used on. 
+Note that to run any of the samples, or use the \nr{} translator, you must have already installed the Java runtime (and toolkit, if you want to compile \nr{} programs using the default compiler). 
+The \nr{} samples and translator, version \nrversion{}, are
+guaranteed to run on Java version \minimalJVMversion{} or later; the programs using the
+\nr{}R.jar runtime library will run on earlier versions of many JVM's.\footnote{For earlier versions of Java,
+  \nr{} 2.05 is available from the \nr{}.org website.} For ease
+of development and the availability of additional Java tools, a Java
+SDK can be installed, but \nr{}
+programs can be interpreted or compiled on a Java JRE
+installation\footnote{See chapter \ref{nosdk}}. By
+default the built-in (same compiler classes as javac uses) compiler of the Java SDK is used. You can test whether Java is installed, and its version, by trying the following command at a command prompt:
+\begin{verbatim} 
+    java –version
+\end{verbatim}
+which should display a response similar to this:
+\begin{verbatim} 
+java version "1.7.0_17"
+Java(TM) SE Runtime Environment (build 1.7.0_17-b02)
+Java HotSpot(TM) 64-Bit Server VM (build 23.7-b01, mixed mode)
+\end{verbatim}
+For more information on Java installation, see the Oracle Java web page\footnote{at \url{http://www.javasoft.com}} – or other suppliers of Java toolkits.
+
+\section{Unpacking the \nr{} package}
+The \nr{} package is shipped as a collection of files compressed into the file \nr{}<version>.zip. 
+Most modern operating environments can uncompress a .zip package by doubleclicking.
+\subsection{Unpacking the \nr{}.zip file} 
+An unzip command is included in most Linux distributions, and Mac
+OSX. You can also use the jar command which comes with all Java
+development kits, with the options xvf.
+Choose where you want the \nr{} directory tree to reside, and unpack the zip file in the directory which will be the parent of the \nr{} tree. Here are some tips: 
+The syntax for unzipping \nr{}.zip is simply
+\begin{alltt}
+        unzip NetRexx-\nrversion{}
+\end{alltt}
+which should create the files and directory structure directly.
+\index{unpacking}
+\index{zip files, unpacking}
+\index{NetRexx package}
+\index{package/NetRexx}
+\begin{itemize} 
+\item WinZip: all versions may be used
+\item Linux unzip: use the syntax: unzip –a \nr{}. The “–a” flag will automatically convert text files to Unix format if necessary
+\item jar: The syntax for unzipping \nr{}.zip is
+\begin{alltt} 
+jar xf NetRexx-\nrversion{}.zip 
+\end{alltt}
+\index{jar command, used for unzipping}
+\end{itemize}
+which should create the files and directory structure directly. The “x” indicates that the contents should be extracted, and the “f” indicates that the zip file name is specified. Note that the extension (.zip) is required. 
+
+After unpacking, the following directories should have been created:
+\begin{verbatim}
+  |-bin
+   |-documents
+   |-examples
+   |---NrxRedBk
+   |-----Redbook
+   |-------exception
+   |-------gui
+   |-------utility
+   |-----cgi
+   |-----compiler
+   |-----exceptions
+   |-----file
+   |-----first
+   |-----gui
+   |-------Animator
+   |-------BorderLayout
+   |-------CardLayout
+   |-------CheckBox
+   |-------CloseWindow
+   |-------EqualSizePanel
+   |-------ExtendedLabel
+   |-------FieldSelect
+   |-------FlowLayout
+   |-------GridBagLayout
+   |-------GridLayout
+   |-------GuiApp
+   |-------GuiFirst
+   |-------ImagePanel
+   |-------MenuBar
+   |-------MessageBox
+   |-------PhotoAlbum
+   |-------PopUpMenu
+   |-------PromptDialog
+   |-------SimpleGridBagLayout
+   |-------WindowFocus
+   |-------WindowSupport
+   |-----jdbc
+   |-----language
+   |-----network
+   |-------net
+   |-------rmi
+   |-------rmichat
+   |-------rmijdbc
+   |-------url
+   |-----nrxbeans
+   |-------lab
+   |-------sample
+   |-----script
+   |-----thread
+   |-------consumer
+   |-------philfork
+   |-------synch
+   |---ant-task
+   |---enterprise
+   |-----wmq
+   |---ibm-historic
+   |---new-3.01
+   |---rosettacode
+   |---windows
+   |-lib
+   |-runlib
+   |-tools
+   |---ant-task
+   |---emacs
+\end{verbatim}
+\section{The \nr{} packages}
+In the \emph{lib} subdirectory, there are three java archive files
+(\emph{jars}), which are called:
+
+\begin{description}
+\item[\nr{}F.jar] The translator (and runtime) package including the
+  ecj\footnote{Eclipse Compiler for Java} java compiler
+\item[\nr{}C.jar] The translator (and runtime) package without java
+  compiler
+\item[ecj-4.4RC1.jar] The eclipse java compiler package
+\end{description}
+
+The \emph{runlib} directory contains one java archive:
+\begin{description}
+\item[\nr{}R.jar] A minimal package including only the runtime
+  \nr{} classes - for distribution with \nr{} programs
+\end{description}
+\index{NetRexxF.jar}
+It is advised to start with the \nr{}F.jar archive package. This can
+be used for your first \nr{} activities in a way that is independent
+of the Java \emph{classpath}, or the Java installation - a development
+installation (JDK) or just the java runtime (JRE). This enables you to interpret, or
+compile \nr{} programs to .class files. The \nr{}C.jar package is
+used by experienced \nr{} users; it requires a correct setting of
+the \emph{classpath} environment variable (explicitly, or implicitly
+by adding it to the JVM standard extension directory) to find the java
+compiler (either the JDK included \emph{javac} classes or the included
+eclipse compiler) - on a JDK or JRE installation. The \nr{}R.jar
+contains only the runtime of the \nr{} language. It can be added to
+compiled \nr{} applications if a small footprint is required. The
+following paragraph discusses getting the compiler to translate your
+first program using the \nr{}F.jar - after that the process of
+adding the translator to your environment is shown, what we will call
+'installing' here. There is no requirement for a 'setup' type of
+install, and when you can execute Java on your system, there is no
+need to be 'Administrator' or 'root' on your system - \nr{} runs
+fine from your home directory.
+
+\section{First steps with \nr{}}
+\begin{enumerate}
+\item Verify the working of java on your system with the command:
+	java -version\newline
+If this does not work, obtain a version at \url{http://java.com} and install it.
+
+\item Create a file named hello.nrx in the directory that contains
+  NetRexxF.jar, that contains  the line:
+\begin{verbatim}
+	say 'hello, netrexx world!'
+\end{verbatim}
+You can copy this file from the ../bin directory.
+\item For Windows environments, add the bin directory to your PATH
+  environment variable. The nrc.bat command takes care of adding the
+  NetRexxF.jar library to your CLASSPATH environment variable,  so you
+  can just run with:
+\begin{verbatim}
+	nrc -exec hello
+\end{verbatim}
+To compile to a java .class file, leave out the -exec option. If this
+works, you can skip the other steps (or read on, to get a feel for the
+working of the CLASSPATH environment).
+\item In this directory, verify the working of the interpreter with:
+\begin{verbatim}
+	java -jar NetRexxF.jar -exec hello
+\end{verbatim}
+\item Verify the creating of a .class file using the compiler with:
+\begin{verbatim}
+	java -Dnrx.compiler=ecj -jar NetRexxF.jar hello
+\end{verbatim}
+This should create hello.class, to be executed with the command:
+\begin{verbatim}
+	java -cp NetRexxF.jar:. hello
+\end{verbatim}
+(on windows, the colon should be a semicolon)
+\end{enumerate}
+The -jar directive tells the JVM to ignore the set classpath and to
+start a method that is indicated in the jar metadata.This method is,
+for the NetRexxF.jar: 
+ \begin{verbatim}
+        java org.netrexx.process.NetRexxC
+\end{verbatim}
+just as shown in \ref{testing} on page \pageref{testing}. Now that you
+have seen that it works, you can use this method of
+execution\footnote{Taking into account that you will have to add
+  additional entries to the -jar argument for all but the most trivial
+applications.}, or
+proceed with installing a more flexible way of using NetRexx.
+
+When a class calls another class that is located in the same
+directory, we need to add this directory to the \emph{classpath}. For
+example, if we want to compile the charOblong.nrx example from page
+\pageref{charoblong}, which extends the Oblong class, we need to
+invoke it as:
+ \begin{verbatim}
+        java -Dnrx.compiler=ecj -jar NetRexxF.jar -cp NetRexxF.jar;. charOblong.nrx
+\end{verbatim}
+This can be done in a more straightforward way, by installing the
+\nr{}C.jar on the classpath and using the provided \texttt{nrc}
+script; this is the subject of the next section.
+
+\section{Installing the \nr{} Translator}
+The \nr{} package includes the \nr{} translator – a Java application which can be used for compiling, interpreting, or syntax-checking \nr{} programs. The procedure for installation is as follows\footnote{For Windows operating systems, forward slashes are backslashes.}:
+\begin{enumerate}
+\item Make the translator visible to the Java Virtual Machine (JVM) - either:
+\begin{itemize} 
+\item Add the full path and filename of the \nr{}/lib/\nr{}C.jar to the CLASSPATH environment variable for your operating system.\footnote{if you have a \nr{}C.zip in your CLASSPATH from an earlier version of \nr{}, remove it (\nr{}C.jar replaces \nr{}C.zip).}
+\item Or (deprecated): Copy the file \nr{}/lib/\nr{}C.jar to the jre/lib/ext directory in the Java installation tree. The JVM will automatically find it there and make it available\footnote{ This has serious drawbacks, however:
+As soon as the Java version is updated, \nr{} applications may
+mysteriously – due to the now obsolete path - fail. The contents of
+the extensions directory are unversioned.
+Running multiple versions of Java and \nr{} for testing purposes, or
+with an application that included another version of \nr{} will become very hard when this way of installing is chosen.}.
+\end{itemize}
+\item Copy all the files in the \nr{}/bin directory to a directory in your PATH. This is not essential, but makes shorthand scripts and a test case available. 
+\item Make the file [...]/lib/tools.jar (which contains the javac compiler) in the Java tree visible to the JVM. You can do this either by adding its path and filename to the CLASSPATH environment variable, or by moving it to the jre/lib/ext directory in the Java tree. This file sometime goes under different names, that will be mentioned in the platform-specific appendices.
+\end{enumerate}
+\section{Installing just the \nr{} Runtime}
+\index{runtime,installation}
+\index{installation,runtime only}
+\index{\nr{}R runtime classes}
+If you only want to run \nr{} programs and do not wish to compile or
+interpret them, or if you would like to use the \nr{} string (Rexx)
+classes from other languages, you can install just the \nr{} runtime
+classes.
+\newline
+To do this, follow the appropriate instructions for installing the
+compiler, but use the \nr{}R.jar instead of \nr{}C.jar.
+The \nr{}R.jar file can be found in the \emph{\nr{}/runlib} directory.
+\newline
+You do not need to use or copy the executables in the \emph{\nr{}/bin}
+directory.
+\newline
+The \nr{} class files can then be referred to from Java or \nr{}
+programs by importing the package \emph{netrexx.lang}.  For
+example, a string might be of class \emph{netrexx.lang.Rexx}.
+\newline
+For information on the \emph{netrexx.lang.Rexx} class and other classes
+in the runtime, see the \emph{\nr{} Language Reference} document.
+
+\textbf{note} If you have already installed the \nr{} translator
+(\nr{}C.jar) then you do not need to install \nr{}R.jar; the latter
+contains only the \nr{} runtime classes, and these are already
+included in \nr{}C.jar.
+
+\section{Setting the CLASSPATH}\label{install_classpath}
+Most implementations of Java use an environment variable called CLASSPATH to indicate a search path for Java classes. The Java Virtual Machine and the \nr{} translator rely on the CLASSPATH value to find directories, zip files, and jar files which may contain Java classes. 
+The procedure for setting the CLASSPATH environment variable depends
+on your operating system, and for Unix versions, which shell you are using.
+\begin{itemize}
+\item For Linux, MacOSX and other Unix versions (BASH (bash), Korn
+  (ksh), or Bourne (sh) shell), use:
+\begin{verbatim}
+        CLASSPATH=<newdir>:\$CLASSPATH 
+        export CLASSPATH
+\end{verbatim}
+
+\item This should be placed
+  in your ~/.bash\_profile, /etc/profile, .login, or .profile file, as
+  appropriate. The environment changes can be made active by running,
+  for example,
+\begin{verbatim}
+. .bash_profile
+\end{verbatim}
+in your home directory, when this location is where you made the changes.
+\item For Linux, MacOSX and other Unix versions (C shell (csh and tcsh)), use:
+\begin{verbatim}
+        setenv CLASSPATH <newdir>:\$CLASSPATH 
+\end{verbatim}
+These should be set in your .cshrc file (csh) or .tcshrc (tcsh). The
+\texttt{rehash} command can be used to activate these changes in the environment. If you are unsure of how to do this, check the
+documentation you have for installing the Java toolkit.
+\item For Windows operating systems, it is best to set the system wide
+  environment, which is accessible using the Control Panel (a search
+  for ``environment'' offsets the many attempts to relocate the exact
+  dialog in successive Windows Control Panel versions somewhat).
+\item In Windows \emph{Powershell}, limitations set by the
+  administrator can determine which kind of scripting (using
+  Powershell, not \nr) can be undertaken. It might be difficult to
+  modify the enviroment, and a different from scripting under the
+  \texttt{cmd.exe} processor is that the environment is local to an
+  execution unit of a line. When changing the environment is allowed,
+  and a Powershell script is used to start the \nr translator, this is
+  how it can be done:
+\begin{verbatim}
+$env:path = "c:\program files\java\jdk1.7.0_02\bin;\Users\rvj\bin;"
+$env:classpath = ".;\Users\rvj\lib\\NetRexxC.jar"
+\end{verbatim}
+ \item When using an IBM JVM or JRE, make sure that the file vm.jar is
+   on the CLASSPATH - \nr{} will complain about missing
+   java.lang.Object when it is not.
+\end{itemize}
+
+In case of encountering difficulties in getting the classpath settings
+to work, the following remarks can be helpful:
+\begin{itemize}
+\item Spaces in directory names are OK, but these paths must be
+  surrounded by double quotes in most environments, like Windows and
+  Unix
+\item Non-existing directories in classpaths can hurt - move the
+  \nr{}C.jar path to the beginning of classpath to eliminate the
+  risk of non-existing directories.
+\end{itemize}
+
+\section{Testing the \nr{} Installation}\label{testing}
+After installing \nr{}, it is recommended that you test that it is
+working correctly. If there are any problems, check the
+\emph{Troubleshooting} section of this document, chapter
+\ref{troubleshooting} on page \pageref{troubleshooting}.
+
+Test the installation by typing in a file named 'hello.nrx' containing the line:
+\begin{verbatim} 
+       say 'hello, world' 
+\end{verbatim}
+ If you want to avoid typing in the file yourself,
+\begin{verbatim} 
+       ./examples/ibm-historic/hello.nrx
+\end{verbatim}
+has the original version of this program.
+\begin{enumerate}
+\item Enter the command
+ \begin{verbatim}
+        java org.netrexx.process.NetRexxC hello
+\end{verbatim}
+Make sure that the userid that you are using for this has write
+authorization for the directory that contains the source.\footnote{For example,
+more modern versions of Windows do not allow non-admin userids to
+write into the program files directories. In this case, make a
+directory under your home directory and copy the hello.nrx file there,
+and start the nrc command from the same location. Running it from the
+examples directory will work.}
+This should run the \nr{} compiler, which first translates the
+\nr{} program hello.nrx to the Java program hello.java. It then
+invokes the default Java compiler (javac\footnote{In fact, the class
+  that the javac program also calls for compilation - but you can use
+  other java compilers}), to compile the file hello.java to make the
+binary class file hello.class. The intermediate hello.java file is
+then deleted, unless an error occurred or you asked for it to be
+kept. You can also specify the source filename as 'hello.nrx' - for
+convenience, the translator will look for a file with a '.nrx' suffix
+if this is not specified.
+\item Enter the command
+ \begin{verbatim} 
+java hello 
+\end{verbatim}
+This runs (interprets the bytecodes in) the hello.class file, which should display a simple greeting. On some systems, you may first have to add the directory that contains the hello.class file to the CLASSPATH setting so Java can find it. 
+\item With the sample scripts provided (\nr{}C.cmd, \nr{}C.bat, or \nr{}C.sh), or the equivalent in the scripting language of your choice, the steps above can be combined into a simple single command such as:
+  \begin{verbatim}
+ NetRexxC.sh –run hello
+\end{verbatim}
+This package also includes a trivial nrc, and matching nrc.cmd and nrc.bat scripts, which simply pass on their arguments to \nr{}C; “nrc” is just a shorter name that saves keystrokes, so for the last example you could type: 
+  \begin{verbatim}
+        nrc –run hello
+\end{verbatim}
+Note that scripts may be case-sensitive, and you will probably have to spell the name of the program exactly as it appears in the filename. Also, to use –run, you may need to omit the .nrx extension. 
+You could also edit the appropriate nrc.cmd, nrc.bat, or nrc script
+and add your favourite “default” \nr{}C options there. For example,
+you might want to add the –prompt flag (described later) to save
+reloading the translator before every compilation. If you do change a
+script, keep a backup copy so that if you install a new version of the
+\nr{} package you won’t overwrite your changes. On Unix versions, do
+not forget to make the scripts nrc and \nr{}C.sh executable with the
+command \texttt{chmod +x} \emph{scriptname}. Also on Unix versions, it
+is better to use a command alias to start java classes; it avoids
+problems with the splitting of strings on the command line.
+\end{enumerate}

@@ -1,0 +1,70 @@
+/* uncomment package if this code is in a subdirectory of one on your classpath
+ * and change xxxx to the name of the subdirectory
+ */
+-- package xxxx
+
+options binary
+
+package stages
+
+import pipes.
+
+class template3 extends stage
+
+/* run a basic stage that has very little setup to do */
+
+method run()
+
+   /* insert objects that need to be reset every invokation here */
+
+   rc = int 0
+   s0 = boolean 1
+   s1 = boolean 1
+
+   do -- to catch the terminating StageError
+
+      /* setup code goes here
+       *
+       * if there are setup problems then
+       *    signal StageError(11,'termplate1 had this error')
+       *
+       */
+
+      a = arg()    -- this could also be in a setup method see template2.txt
+
+      /* body of the stage is here */
+
+      loop forever
+
+         aobj = peekto()             -- pass an object but test a rexx object
+         robj = rexx aobj            -- ie the objects piped are strings...
+         if robj = a then
+            do
+               if s0 then do
+                  selectOutput(0)
+                  output(aobj)
+               catch StageError      -- Using this structure if we capture
+                  s0 = 0             -- the StageError(s) can and will end
+               end                   -- up reporting a RC=4 instead of RC=12
+            end                      -- geting the RC via mrc will work...
+         else
+            if s1 then do
+               selectOutput(1)
+               output(aobj)
+            catch StageError
+               s1 = 0
+            end
+         readto()
+
+      /* catch any cast exceptions that occur and issue a StageError */
+
+      catch ClassCastException
+         signal StageError(13,'Error - Input not convertable to rexx')
+      end
+
+   catch StageError
+   end
+
+   rc = mrc()     -- extract maxium rc from all StageErrors raised by njPipes
+
+exit(rc*(rc<>12))

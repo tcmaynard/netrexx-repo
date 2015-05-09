@@ -1,0 +1,188 @@
+/* You MUST move this into the stages directory for the stageExit to get called */
+package stages
+
+options binary
+
+import pipes.
+
+/* note the 'uses utils, IRange' this is added for the stageExit which uses
+ * of the static mentods in utils
+ */
+
+class template4 extends stage uses utils, IRange
+
+/* objects shared between the ...setup and run methods */
+
+properties private
+
+args = rexx
+rc   = int
+ir   = IRange[]
+d    = rexx
+
+/* method to initialize a stage.  Only called once unless the arg() changes */
+
+method template4_setup() private signals StageError
+
+   if args=null then      -- args can be set by the stageExit too
+      args = arg()
+
+   ir = GetIRanges(args)  -- get a possible IRange
+   nr = ir[0].Number()    -- extract the number of subranges
+
+   if nr=0 then
+      signal StageError(11,'Error - template4 expects a range, found: 'args)
+
+   d = ir[0].Residue()    -- whats left of args after the IRange
+
+   d = DString(d).String  -- extract a delimited string from the residue
+
+   if d='' then
+      signal StageError(11,'template4 expects a range & data.  Just found a range.')
+
+
+/* run a basic stage that has very little setup to do */
+
+method run()
+
+   /* insert objects that need to be reset every invokation here */
+
+   s0   = boolean 1       -- out stream 0 may exist
+   s1   = boolean 1       -- out stream 1 may exist
+   args = null            -- make a null to template4_setup() will call arg()
+
+   do -- to catch the terminating StageError
+
+      /* call doSetup to setup the stage */
+
+      if doSetup() then
+         template4_setup()
+
+      /* body of the stage is here */
+
+      loop forever
+
+         aobj = peekto()             -- pass an object but test a rexx object
+         robj = rexx aobj            -- ie the objects piped are strings...
+         if theRange(robj).pos(d)>0 then
+            do
+               if s0 then do
+                  selectOutput(0)
+                  output(aobj)
+               catch StageError      -- Using this structure if we capture
+                  s0 = 0             -- the StageError(s) can and will end
+               end                   -- up reporting a RC=4 instead of RC=12
+            end                      -- geting the RC via mrc will work...
+         else
+            if s1 then do
+               selectOutput(1)
+               output(aobj)
+            catch StageError
+               s1 = 0
+            end
+         readto()
+
+      /* catch any cast exceptions that occur and issue a StageError */
+
+      catch ClassCastException
+         signal StageError(13,'Error - Input not convertable to rexx')
+      end
+
+   catch StageError
+   end
+
+   rc = mrc()     -- extract maxium rc from all StageErrors raised by njPipes
+
+exit(rc*(rc<>12))
+
+
+/* this method may get overridden by the stageExit, depending on the IRange */
+
+method theRange(a=rexx) returns rexx
+
+   -- extract the rexx string using the IRange.  BuildIRange allows out of
+   -- order and overlaping ranges.  Use BuildIRangeStrict to limit it to
+   -- inorder, nonoverlaping ranges.
+
+   -- BuildIRange would allow a range like (3.5 2.2) and BuildIRangeStrict
+   -- would complain since this is out of order and the subranges overlap.
+
+   return ir[0].BuildIRange(a)
+
+
+/* stageExit(pInfo=Rexx,o=Rexx) returns boolean signals StageError
+ *
+ * This method is an exit called by the compiler.  With it you can change
+ * the unprocessed pipe definition, the definition of the current stage,
+ * and you can pass generated code back to the compiler.  To use it override
+ * it.  See stages\append, stages\prefix and stages\specs for examples of its
+ * use.
+ *
+ * stageExit is ONLY called for stages in the stage directory
+ *
+ * pInfo     = name of pipe,
+ * pInfo[1]  = stage number in pipe
+ * pInfo[2]  = stage label, null if no label
+ * pInfo[3]  = stage name
+ * pInfo[4]  = stage arguements
+ * pInfo[5]  = rest of pipe
+ * pInfo[6]  = sep
+ * pInfo[7]  = end
+ * pInfo[8]  = not modifier active
+ * pInfo[9]  = stage is a driver (no input streams)
+ * pInfo[10] = stage is a sink (no output streams)
+ * o         = ''
+ * o[0]      = 0
+ *
+ * When compilerExit returns with true, the compiler expects:
+ *
+ * pInfo[2]  = stage label
+ * pInfo[3]  = name of stage
+ * pInfo[4]  = stage arguements - note 'arg(_)' is magic and passes the pipe's
+ *             arguement to the stage unchanged.  See the specs stage.
+ * pInfo[5]  = rest of the pipe
+ * pInfo[8]  = not modifier active.   See nfind, nlocate.
+ * pInfo[11] = IF you change the name of THIS stage to an existing stage, call
+ *             the stageExit in pInfo[11].  The current stage should not be
+ *             generating code and the new stage might.  See nfind, nlocate.
+ * o[0]      = number of lines generated for classes
+ * o[n]      = line n of generated code
+ *
+ */
+
+method stageExit(pInfo=Rexx,o=Rexx) returns boolean signals StageError
+
+pid  = pInfo            -- pipe name
+stg  = pInfo[3]         -- stage name
+args = pInfo[4]         -- arguement, note that this is an instance object
+
+template4_setup()       -- signal a stageExit if there is no IRange
+
+try = ir[0].BuildIRangeExit(rexx 'ir',rexx 'a')  -- will generating a class to
+if try.pos('.sub')=0 then                        -- override the method help?
+   return 0                                      -- no, not this time...
+
+/* here we build code and pass it back to the compiler */
+
+cname = stageName(pid'_'stg,pid,pInfo[1])    -- the standard way to ask njPipes
+                                             -- for the name of a new class
+
+n = o[0]
+
+o[n+1] ='class 'cname' extends 'stg' private'
+o[n+3] ='method theRange(a=rexx) returns rexx'
+o[n+5] ='   return 'try
+n = n+6
+
+o[0] = n           -- save the number of lines generated
+
+pInfo[3] = cname   -- call this stage instead, there is no need to set pInfo[11]
+                   -- since cname is created here and its stageExit is this one
+
+return 1           -- tell the compiler to look at what we built
+
+/*
+ * There is no need to override rexxArg or stageArg since we are not being
+ * passed a rexx object's name or a stage name.
+ *
+ */

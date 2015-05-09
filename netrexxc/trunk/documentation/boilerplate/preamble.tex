@@ -1,0 +1,66 @@
+\documentclass[10pt]{book}
+\usepackage[FINAL]{../boilerplate/rexx} 
+\usepackage{hyperref}
+\usepackage{graphics}
+\usepackage{fontspec}
+% \fontspec
+%      [ Path = /Users/rvjansen/Fonts/,
+%        BoldFont       = MinionPro-Bold.otf ,
+%        ItalicFont     = MinionPro-It.otf ,
+%        BoldItalicFont = MinionPro-BoldIt.otf ]
+%      {MinionPro-Regular.otf}
+% \fontspec
+%      [ Path = /Users/rvjansen/Fonts/,
+%        BoldFont       = SourceCodePro-Bold.otf ]
+%      {SoureCodePro-Regular.otf}
+
+\setmainfont[Mapping=tex-text]{Minion Pro}
+\setmonofont[Mapping=tex-text,Scale=0.80]{Source Code Pro}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{makeidx}
+\usepackage[all]{xy}
+%\usepackage{lingmacros}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{framed}
+\usepackage{fancyvrb}
+\definecolor{shadecolor}{rgb}{0.9,0.9,0.9}
+\usepackage{alltt}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+\usepackage{listings}
+\usepackage[official]{eurosym}
+\makeatletter
+\lst@CCPutMacro\lst@ProcessOther {"2D}{\lst@ttfamily{-{}}{-{}}}
+\@empty\z@\@empty
+\makeatother
+\input{../boilerplate/netrexxformat}
+\usepackage{../boilerplate/rail}
+\usepackage{pst-barcode,pstricks-add}
+\usepackage{bashful}
+\usepackage{metalogo}
+\usepackage{marginnote}
+\hyphenation{Net-Rexx Net-Rexx-A Net-Rexx-C Net-Rexx-R Mac-OSX
+  infra-structure im-ple-men-ta-tion-de-pen-dent}
+\makeindex
+\DeclareGraphicsExtensions{.jpg,.png}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\newcommand{\nr}{Net\textsc{Rexx}}
+\newcommand{\Rexx}{R\textsc{exx}}
+\newcommand{\nrversion}{3.03}
+\newcommand{\nrpackagename}{NetRexx-\nrversion{}RC2.zip}
+\newcommand{\minimalJVMversion}{1.6}
+\newcommand{\keyword}[1]{\texttt{#1}}
+\newcommand{\thisyear}{\splice{java TexYear}}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

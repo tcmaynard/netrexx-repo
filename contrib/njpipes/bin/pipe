@@ -1,0 +1,1 @@
+java -cp $NJPIPES_HOME/njpipesC.jar:$NETREXX_HOME/NetRexxC.jar org.netrexx.njpipes.pipes.compiler $*

@@ -1,0 +1,22 @@
+-- test stage used during DString development by Jeff
+
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class DStringTest extends stage
+
+method run()
+trace results
+
+do
+   i = '/zyz some/ extra stuff'
+
+   d = DString DString(i)
+
+   s = d.String()
+   r = d.Residue()
+
+   output(s)
+   output(r)
+catch StageError
+end

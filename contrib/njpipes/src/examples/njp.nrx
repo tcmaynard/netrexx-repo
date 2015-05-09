@@ -1,0 +1,23 @@
+class njp extends Object
+
+   properties static
+   jc = HashTable(29)    -- JIT Cache
+
+method njp(a=String[])
+
+   cnf = java.io.file(String 'pipes.cnf')
+   if \cnf.exists() then do
+--njp1 pipe (njp_cnf ) literal import pipes.,import stages.,import tests. ! split , ! diskw pipes.cnf
+p$njp1 = njp_cnf.get('')
+p$njp1.runpipe()
+--njp1
+   end
+
+   pipes.compiler(pipes.stage.buildArg(a))
+
+
+method main(a=String[]) static
+
+   njp(a)
+
+exit

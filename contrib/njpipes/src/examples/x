@@ -1,0 +1,208 @@
+      --- stage.nrx [literal_1,njPipes]
+ 1330 *=*    say this
+      >>> "stages.literal@1f5a3d6b"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "6"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping literal_1 tcpsmtp_tcppipe@158b649 0 6"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [split_2,njPipes]
+ 1330 *=*    say this
+      >>> "stages.split@5d764be1"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "5"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping split_2 tcpsmtp_tcppipe@158b649 0 5"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [deblock_7,njPipes]
+ 1330 *=*    say this
+      >>> "stages.deblock@16fd0b7"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "4"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping deblock_7 tcpsmtp_tcppipe@158b649 0 4"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [copy_4,njPipes]
+ 1330 *=*    say this
+      >>> "stages.copy@53ef9f1d"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "3"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping copy_4 tcpsmtp_tcppipe@158b649 0 3"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [tcpsmtp_tcppipe_rexx_tcpclient_3,njPipes]
+ 1330 *=*    say this
+      --- stage.nrx [stemw_6,njPipes]
+ 1330 *=*    say this
+      >>> "stages.stemw@18b753f8"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "2"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping stemw_6 tcpsmtp_tcppipe@158b649 0 2"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [find_5,njPipes]
+ 1330 *=*    say this
+      >>> "stages.find@2be9cb75"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "1"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping find_5 tcpsmtp_tcppipe@158b649 0 1"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [tcpsmtp_tcppipe_rexx_tcpclient_3,njPipes]
+ 1330 >>> "tcpsmtp_tcppipe_rexx_tcpclient_3@4413ee"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "0"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping tcpsmtp_tcppipe_rexx_tcpclient_3 tcpsmtp_tcppipe@158b649 0 0"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [literal_1,njPipes]
+ 1330 *=*    say this
+      >>> "stages.literal@3f7fa65e"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "6"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping literal_1 tcpsmtp_tcppipe@75786e64 0 6"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...
+      --- stage.nrx [split_2,njPipes]
+ 1330 *=*    say this
+      >>> "stages.split@742808b3"
+ 1331 *=*    do protect this          -- wakeup anyone waiting on us
+ 1332 *=*       commit(-1)
+      >>> "-1"
+ 1333 *=*       notifyAll()
+ 1334 *=*    end
+ 1336 *=*    do protect p             -- let pipe know stage is ending
+ 1337 *=*       if _rc>p._rc
+      >>> "0"
+ 1341 *=*       p._active = p._active-going       -- just incase exit called twice
+      >p> "5"
+ 1342 *=*       going = 0
+      >p> going "0"
+ 1343 *=*       if (p._debug&8)<>0
+      >>> "1"
+      *=*                          then
+ 1344 *=*          say 'Stopping' _name p c p._active
+      >>> "Stopping split_2 tcpsmtp_tcppipe@75786e64 0 5"
+ 1345 *=*       p.notifyAll()
+ 1346 *=*    end
+ 1348 *=*    signal ThreadQ                       -- make sure exit is always safe...

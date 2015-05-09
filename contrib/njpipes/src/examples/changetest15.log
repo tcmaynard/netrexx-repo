@@ -1,0 +1,44 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program changetest15.nrx
+Program changetest16.nrx
+Program changetest17.nrx
+Program changetest19.nrx
+Program choptest1.nrx
+Program choptest3.nrx
+Program choptest4.nrx
+Program choptest5.nrx
+Program choptest6.nrx
+Program choptest7.nrx
+Program choptestx3.nrx
+Program commandtest.nrx
+Program comments.nrx
+Program comparetest1.nrx
+Program comparetest10.nrx
+Program comparetest11.nrx
+Program comparetest2.nrx
+Program comparetest3.nrx
+Program comparetest4.nrx
+Program comparetest5.nrx
+Program comparetest6.nrx
+Compilation of 'changetest15.nrx' successful
+Compilation of 'changetest16.nrx' successful
+Compilation of 'changetest17.nrx' successful
+Compilation of 'changetest19.nrx' successful
+Compilation of 'choptest1.nrx' successful
+Compilation of 'choptest3.nrx' successful
+Compilation of 'choptest4.nrx' successful
+Compilation of 'choptest5.nrx' successful
+Compilation of 'choptest6.nrx' successful
+Compilation of 'choptest7.nrx' successful
+Compilation of 'choptestx3.nrx' successful
+Compilation of 'commandtest.nrx' successful [2 classes]
+Compilation of 'comments.nrx' successful
+Compilation of 'comparetest1.nrx' successful
+Compilation of 'comparetest10.nrx' successful
+Compilation of 'comparetest11.nrx' successful
+Compilation of 'comparetest2.nrx' successful
+Compilation of 'comparetest3.nrx' successful
+Compilation of 'comparetest4.nrx' successful
+Compilation of 'comparetest5.nrx' successful
+Compilation of 'comparetest6.nrx' successful

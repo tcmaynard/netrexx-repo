@@ -1,0 +1,12 @@
+pipe (sqlt1)
+
+   literal insert into addr_book values (2,'Phil','Bridgeman','NA','NA','EDS-IPG','2361','828-1704','brigdeman@rolls-royce.ca') !
+   sqlselect !
+   console
+
+pipe (sqlt2)
+
+   literal select last_name, first_name, email from addr_book order by last_name, first_name !
+   sqlselect !
+   console
+

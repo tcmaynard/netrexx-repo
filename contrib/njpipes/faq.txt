@@ -1,0 +1,337 @@
+
+                   njPipes FAQ Version 0.60, September 1st, 2011
+
+
+1.  How does line continuation work in .njp files?
+
+    If a line ends with either a stage seprator or an end character or if the
+    next nonblank line begins with either of these characters, the pipe is
+    continued.  You can also end a line with a contination character (defaults
+    to comma).
+
+
+2.  What is the problem with \ (backslash)?
+
+    Backslash is used as an escape character by netrexx.  This implies that it
+    cannot be used as an end character.  It also means that you often have to
+    use two backslashes to get one...
+
+
+3.  What is the problem with | (bar)?
+    Why diskr and diskw instead of < and > ?
+
+    Bar is used as a piping character by many shells, including dos, w95, os2
+    and some unix(s).  Using it as the njPipes stage sep character eventually
+    will cause you problems.  Both < and > are also used by many shells...
+
+
+4.  njPipes is not finding stages?
+
+    Java is case sensitive.  CHANGE is not equal to change or Change.  The
+    stages njPipes supplies all have lower case names.
+
+    Make very sure your classpath is correct.  If using unix, ensure you have
+    permission for all the items in your classpath.  See Question 29.
+
+
+5.  Do you have to quote pipes in netrexx code like CMS?
+
+    No, but you should suffix the code with .njp instead of .nrx and pass it
+    through the njPipes compiler.  To pass arguements or variables to a stage
+    you enclose the variable name or auguement number in braces.
+
+    {}  -  pass arg(), which is the complete arguement, to the stage
+    {2} -  pass arg(2), or the second word of the arguement, to the stage
+    {a} -  pass the a reference to object a to the stage.  The object is no
+           longer restricted to be of class rexx.
+
+    Also see question 22.
+
+
+6.  Are there any examples?
+
+    For pipes, see the .njp files in the njpipes\examples directory.  The
+    njpipes\stages directory has the NetRexx (.nrx) source of all the stages.
+
+
+7.  Why the rexx stage?
+
+    njPipes moves objects.  Many stages expect all objects to be of class rexx.
+    The rexx stage modifier will convert objects to rexx if possible.
+
+    ... ! rexx in change //xxx/ ! ...  to insure inputs are rexx
+    ... ! rexx out diskr ! ...         to insure output are rexx
+    ... ! rexx somestage ! ...         both inputs and outputs are rexx
+
+
+8.  Why do I have to compile pipes?
+
+    When I started out it seemed the only way to do it.  Once I learned how to
+    use dynamicly loaded classes, njPipes was building nexrexx source, via
+    stageExit, for some stages to increase performance.
+
+
+9.  Why do I need to name every pipe?
+
+    Since pipes are compiled they need to be named...
+
+
+10. Is there a maximum number of stages in a pipe?
+
+    No, if the pipe does not seem to be finding all the stages check for a
+    missing end or stage sep character.  If you have pipes with many stages
+    contact me, there are a few pieces of code that could be optimized for
+    large numbers of stages.  You can see what njPipes compiles by using
+    the -gen compile option (java njp -gen <source>).
+
+
+11. My pipes wait thirty seconds before terminating correctly, why?
+
+    You are probably missing an Exit in one of your stages.
+
+    njPipes uses a thread pool.  The threads are kept thirty seconds before
+    they are terminated.  You can force them to end earlier by using 
+    'java.lang.system.exit' or by calling ThreadPool.stop().
+
+
+12. What is a StageExit?
+
+    They are used to produce faster running stages.  A StageExit is an
+    extension to the njPipes compiler.  They are invoked by the compiler
+    in conjuction with rexxArg and stageArg, to generate optimized netrexx
+    code.  Consider them a very sharp knife and use with care and only when
+    they will really help.
+
+
+13. Can I determine what streams are connected in a stageExit?
+
+    No, at compile time, when stageExits are run its just not possible.
+
+
+14. What does the runaway option do?
+
+    Since njPipes lets java dispatch the stages it must monitor pipes for 
+    deadlocks.  It creates a thread to monitor each pipe for deadlocks.  The 
+    thread wakes up once in the runaway interval to check if the pipe is 
+    deadlocked.
+
+
+15. What is the JITCache option for and when do you use it?
+
+    Its to used in netrexx or java code.  You create a hashtable and pass it
+    as a JITCache.  Its used to keep references to the pipes you use.  This
+    is done so the JIT does not discard the code it has built for all the
+    pipes and stages that you use.
+
+
+16. What stages are examples of using multithreaded stages?
+
+    tcpclient, tcpdata and elastic each use two threads, the command
+    stage uses three.  Be very carefull to let only thead interact with
+    the pipe at a time (ie have only one output/readto/peekto etc active
+    at a time).
+
+
+18. What stages are examples of using StageExit?
+
+    There are many stages exploiting StageExit.  The append and prefix stages
+    are basic examples as is frtarget.  The unique and specs stages completely
+    generate the stage code (this is very tricky to get right).   Stages like
+    change, zone and casei are a good compromise.
+
+
+19. Where else could StageExit be used?
+
+    Parts of the lookup stage's code would benefit from a stageExit...
+
+    If you are using IRanges take a good look at BuildIRangeExit in the
+    pipes\IRange.nrx file.
+
+
+20. What does the doSetup method do?
+
+    doSetup is used to avoid overhead for stages that are apt to be called
+    in loops.  Structuring your stages as in tcpdata, tcpclient & lookup avoids
+    calling the stage's setup method if it not necessary.  This will occur
+    when the arguement to the stage is static and the pipe is called in a loop.
+    See Question 24.  If there is stage setup that needs to be done every time
+    a pipe (and stage) objects are reused override the reuse() method.
+    See tests/timer.nrx
+
+
+21. I see { and } in .njp source.  What are they used for?
+
+    They are use to pass the pipe's (also see #22) arguments to stages.
+    Using {} passes the complete argument, Using {N}, where N is a number,
+    passes the Nth word of the argument to the stage.
+
+
+22. How do I pass arguments to a callpipe or addpipe?
+
+    You use {name} or {n}, where name is a variable of class rexx or N
+    to pass Nth word of the arguement of the calling stage. For this to work,
+    be sure to pass the source through the pipes compiler.
+
+    Note {} (with no name or number between the braces) will not work in a
+    callpipe or an addpipe, assign arg() to a variable and pass it instead.
+
+
+23. I am not getting the return code I expect from a stage or pipe...
+
+    Try compiling the pipe with a 'debug 72' in the options.  This will show
+    each StageError raised by pipes and output infomation when each stage
+    ends.  Often the cause of this error is a stage using 'rc = rc()' in the
+    'catch StageError' clause.  Unless this is in every 'catch StageError', the
+    stage will sometimes get an invalid return code.  Often you can fix this
+    by adding a 'rc = mrc()' just before any 'exit(rc*(rc<>12)'.  
+
+    See question 28.
+
+
+24. How should I structure my stages?
+
+    I have included some simple templates in the njpipes directory
+
+    template1.nrx - a basic stage
+    template2.nrx - a basic stage using doSetup
+    template3.nrx - a basic stage showing an alternate way to set the final rc
+    template2.nrx - a stage with a simple stageExit using BuildIRangeExit
+
+
+25. How do I report errors in the parameters of stages?
+
+    Issue a Emsg(11,'your error') before the stage commits to -1.  Where
+    11 is the suggested return code for parameter error and 'your error' is 
+    a message.  The deblock stage has an example of this.  
+
+    Also see Questions 24, 26 & 36.
+
+
+26. How do commit levels work in njPipes?
+
+    All stages now start at a commit level of -2.  Unless autocommit is
+    disabled with nocommit(), they commit to -1 at the first interaction
+    with the pipe.  To see the commits happen compile the pipe with option
+    'debug 48'.  Like in CMS, commit levels usually take care of themselves.
+
+    See question 28.
+
+
+27. Is it safe to pass .java or .nrx files through the pipes compiler.
+
+    Yes.
+
+
+28. What are the debug options?
+
+      1  -  Show all pipes starting
+      2  -  Show all pipes ending
+      4  -  Show all stages starting
+      8  -  Show all stages stopping
+     16  -  Show all Commit requests
+     32  -  Show all Commit completions
+     64  -  Show StageErrors raised via stage's Error(int,String) method.  The
+            stage class uses Error for all its StageError signals.
+    128  -  Show the argument that each stage is receiving.  Handy since
+            shells have a habit of doing unexpected thing to arguments.
+            (try: java findtext exit *.nrx vs java findtext "exit *.nrx")
+
+    I find using a debug code of 72 (8+64) very handy when debugging pipes.
+    try: java njp (test debug 72) literal 1 ! dup 10 ! console
+
+
+29. Explain what should be in the classpath?
+
+    Ensure your classpath contains a good reference to njpipesC.jar.  It
+    should also have a reference to . or the directory you are building
+    your stages in before the njpipesC.jar.  Remember to remove the package
+    stagement if your stage is not part of a package.  Java defines packages
+    as sub directories of directories in the classpath.  For instance, I
+    reference d:\njpipes in my classpath.  Under njpipes there are a couple
+    of directories.  The stages directory contains the stages package, the
+    pipes directory the pipes package.  If you were to unzip the njpipesC.jar
+    you would find all the class files in these same directories.
+
+    For java releases above 1.2 you can add the .jar files into java/jre/lib/ext
+    and java will find them without using the classpath.  You probably still want
+    "CLASSPATH=." though.
+
+
+30. I am writing a stage and want it to be fast, how do I optimize it?
+
+    First use doSetup() as presented in template2.nrx or template3.nrx.
+    Second, if you are using a range see if you cannot exploit the canned
+    stageExit BuildIRangeExit as presented in template4.nrx.  If these two
+    items do not speed your stage up enought try generating parts of your
+    code using stageExit.
+
+
+31. How do I kill a pipe?
+
+    Interrupting its pipe object will do the trick.  This like a unix kill -9
+    and should be used with care and only when really necessary.
+
+
+32. How do I find the pipe object?
+
+    Pass your code thru the pipes compiler and insert njpObject() after a pipe,
+    callpipe or addpipe command.  Note the pipe object can get reused after
+    a pipe completes.  So this is a racy solution...
+
+
+33. Now do I get the RC of a pipe?
+
+    Pass your code thru the pipes compiler and insert njpRC() after the
+    callpipe or pipe command.
+
+
+34. Pipes and Stages do not seem to get garbage collected.
+
+    There are a few things happening here.  First, a reference to an object
+    of each pipe class is kept in the JITCache hashtable.  This helps the
+    JIT.  Without this it tends to forget the code compiled for the various
+    stages.  Since stages are very heavily reused this is not good...  Second,
+    njPipes reuses pipe objects.  This helps considerably when pipes are used
+    in loops or multiple instances of a callpipe/addpipe are used.
+
+
+35. When compiling .njp files containing java code a .nrx file is built along
+    with the .java file.  Why?
+
+    The .nrx file contains is a dummy file to allow the NetRexx compiler to
+    compiler to process without errors.  This is intended for .njp files that
+    contain stages that are used in pipes also defined in the same .njp file.
+    See: njpipes\examples\addtest4.njp
+
+36. When do I use Emsg, Error or signal StageError?
+
+    Use Emsg when you want the pipe to stop and issue the message.  The most 
+    common place for this is during the parsing of options, before the first 
+    interaction with the pipe (which normally does an autocommit to a commit 
+    level of -1).  It can be used after this but using signal StageError or
+    Error is safer.
+
+    Error is a wrapper that signals a StageError after saving the return code
+    and message text.  Its a good idea to using Error instead of just signal 
+    StageError.  If you do this using a 'debug 64' option will show you the 
+    Errors, which can help debugging.
+
+    There is one place using 'signal StageError' is recommented.  This is in 
+    stageExit code.
+
+37. Options like deal stop anyeof do not seem to work.
+
+    This is a result of using java to dispatch the pipes.  What happens is 
+    the stage following deal begins the code path to sever its input.  Then
+    java multitasks the thread and other stages run.  Eventually java restarts
+    the stage that wants to sever and it does.  Then the deal stage stops.  
+    Using eofReport('ANY') can help stop things sooner but the only true  
+    solution is to have njPipes control dispatching. 
+    
+38. Can you tell what signaled a StageError.
+
+    You can use the debug 64 option to see this.  From a program you can 
+    use 'catch e=StageError' and use 'e.getMessage().word()' which will
+    contain the pipe command that signaled (ie.  output, selectAnyInput
+    peekto, readto, selectOutput, selectInput).  There is also a e.rc()
+    method to extract the rc from the StageError object.

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+
+<project name="NetRexxJSR223" default="buildit" basedir=".">
+
+	<!-- Allow properties to be overridden: -->
+    <property file="build.properties" />
+    <property file="../build.properties" />
+    <property file="${user.home}/.build.properties" />
+    <property file="${user.home}/build.properties" />
+    
+    <!-- Project properties -->
+    <property name="project.version" value="0.1.0" description="Project's build version"/>
+    <property name="project.root.dir" value="." description="Project's root directory"/>
+    <property name="project.settings.dir" value="${project.root.dir}" description="Project's settings directory"/>
+    <property name="project.netrexx.libdir" value="${basedir}/lib" description="Location of NetRexxC.jar file"/>
+
+  <property name="root"          location="."/>
+  <property name="sources"       value="${root}/src"/>
+  <property name="build"         value="${root}/build"/>
+  <property name="packagename"    value="org/netrexx/jsr223"/>
+  <property name="buildlib"     value="${build}/lib"/>
+  <property name="build.classes" value="${build}/classes"/>
+  
+  <!-- =================================================================== -->
+  <!-- Preparation / creating build directories                            -->
+  <!-- =================================================================== -->
+
+  <target name="prepare">
+    <mkdir dir="${buildlib}"/>
+    <mkdir dir="${build.classes}/${packagename}"/>
+
+    <!-- Common Classpath -->
+    <path id="common.class.path">
+      <fileset dir="${java.home}/lib">
+        <include name="tools.jar"/>
+      </fileset>
+      <fileset dir="${java.home}/../lib" erroronmissingdir="false">
+		<include name="tools.jar"/>
+      </fileset>
+	  <fileset dir="${java.home}/.." erroronmissingdir="false">
+		<include name="jdk*/lib/tools.jar"/>
+      </fileset>      
+      <fileset dir="${java.home}/bundle/Classes" erroronmissingdir="false">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${ant.library.dir}" erroronmissingdir="false">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+
+    <!-- Build Classpath has build.classes prepended, all libs included -->
+    <path id="build.class.path">
+      <path refid="common.class.path"/>
+      <pathelement path="${build.classes}"/>
+      <pathelement location="${ant.core.lib}"/>
+      <fileset dir="${root}/lib">
+        <include name="**/*.jar"/>
+      </fileset>
+    </path>
+    <pathconvert property="build.classpath" refid="build.class.path"/>
+
+    <!-- define netrexx compiler task -->
+    <taskdef name="buildnrc" classname="org.apache.tools.ant.taskdefs.optional.NetRexx" classpath="${build.classpath}"/>
+
+  </target>
+
+    <target name="buildnrx"  depends="prepare" description="Compiles NetRexx source files">
+        <buildnrc srcDir="src/${packagename}" destDir="${build.classes}/${packagename}" includes="*.nrx" 
+        	classpath=".${path.separator}${build.classpath}"
+        	comments="false" savelog="false" time="true" compact="false" removeSourceCopies="true"
+        	verbose='verbose4' crossref="false" replace="false" keep="false"/>
+    </target>
+    
+    <target name="buildit" depends="init,buildnrx" description="Builds NetRexx JSR223 Script Engine without jEdit plugin">
+ 	
+        <jar destfile="${buildlib}\NetRexxJSR223.jar" basedir="." includes="META-INF\" manifest="META-INF\MANIFEST.MF"/>
+        
+        <jar destfile="${buildlib}\NetRexxJSR223.jar" basedir="${build.classes}" includes="org\netrexx\jsr223\*.class" update="true" />
+
+	<jar destfile="${buildlib}\NetRexxJSR223.jar" basedir="." includes="*.html *.TXT build.number" update="true"
+        	excludes="**\*.java **\*.nrx **\*.log **\*.jar **\src\ **\lib\ **\build\ **\dist\ **\*.class"/>     
+        	
+        <copy file="${root}/lib/NetRexxC.jar" todir="${buildlib}"  failonerror="no" />
+        	
+    </target>      
+    
+    <target name="clean" description="Cleans out all build work files for fresh start">
+       <delete dir="${build}" verbose="true" failonerror="false" >
+        	<fileset dir="." includes="*.class" />
+        	<fileset dir="." includes="*.java" />
+        	</delete>
+    </target>	
+    
+	<target name="init"  description="Set build number and document version level">
+		<tstamp/>
+		<buildnumber file="${project.settings.dir}/build.number"/>
+		<property name="build.id.string"
+			value="${ant.project.name} ${project.version}, build ${build.number}-${DSTAMP}"/>
+		<echo level="info" message="Starting building for ${build.id.string}"/>
+	</target>
+	
+    <target name="dist" depends="clean,buildit" description="Builds JAR file from scratch">
+    </target>
+    	
+    <target name="testit" depends="prepare" description="runs a NetRexx script using the JSR223 module">
+    	<property name="arg" value="a b c d"/>
+    	<!-- <property name="localtest" value="global"/> -->
+	<property name="ant.netrexxc.verbose" value="verbose0"/>
+        <local name="ant.netrexxc.verbose"/>
+	<property name="ant.netrexxc.verbose" value="verbose3"/>
+	<property name="netrexxflags" value="verbose3"/>
+	<local name="localtest"/>
+	<property name="localtest" value="local"/>
+	<local name="arg"/>
+	<property name="arg" value="1 2 3 4"/>
+    <script language="netrexx" setbeans="true">
+    	  <classpath>
+		<fileset dir="lib" includes="*.jar" />
+		<fileset dir="${build}/lib" includes="*.jar" />
+	  </classpath>
+	 say "Hello world from" self.getOwningTarget().getName()   -- show the current target name
+	 say "arg="arg
+	 say "localtest="project.getProperty('localtest')
+	 -- say "localtest="localtest
+	 say "packagename="packagename	--	show a property passed in bindings
+	 say 'ant.netrexxc.verbose='project.getProperty('ant.netrexxc.verbose')	--	show a property with a non-Java name (not passed in bindings)
+	 -- say "netrexxflags="NetRexxScriptEngine.getObject('netrexxflags') --	load a binding directly
+	 project.setProperty('messagefromnetrexx','Hello from NetRexx')	--	set a property for later use by Ant tasks
+    </script>
+    
+    <echo>${messagefromnetrexx}</echo>
+    </target>
+    
+    <target name="testall" depends="testit" description="runs a NetRexx script from a file using the JSR223 module">
+    
+	<property name="enviroscan.nrx" location="enviroscan.nrx"/>
+    	<local name="arg"/>
+	<property name="arg" value=""/>
+       <script language="netrexx" setbeans="false" src="${enviroscan.nrx}" >
+	  <classpath>
+		<fileset dir="lib" includes="*.jar" />
+		<fileset dir="${build}/lib" includes="*.jar" />
+	  </classpath>
+    </script>
+    </target>
+	
+    <target name="allpaths" depends="testit" description="runs a NetRexx script from a file using the JSR223 module">
+    
+    	<property name="enviroscan.nrx" location="enviroscan.nrx"/>
+    	<local name="arg"/>
+	<property name="arg" value="allpaths"/>
+       <script language="netrexx" setbeans="false" src="${enviroscan.nrx}" >
+	  <classpath>
+		<fileset dir="lib" includes="*.jar" />
+		<fileset dir="${build}/lib" includes="*.jar" />
+	  </classpath>
+    </script>
+        
+    </target>
+    
+</project>
+
+

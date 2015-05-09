@@ -1,0 +1,42 @@
+
+pipe (mkJava)
+literal cmd /C dir /B {} !
+command !
+rexx to change /.nrx// !
+join 20 / / !
+specs,
+   /cmd /c java -mx32M njp -gen -savelog -nocompile / 1 1-* next write,
+   /cmd /c ren netrexxc.log / 1 word1 next /.log/ next !
+a: command !
+b: faninany !
+   console ?
+ a: ?
+ a: ! b:
+
+pipe (mkClass)
+literal cmd /C dir /B {} !
+command !
+rexx to change /.njp// !
+join 20 / / !
+specs,
+   /cmd /c java -mx32M njp -gen -savelog / 1 1-* next write,
+   /cmd /c ren netrexxc.log / 1 word1 next /.log/ next !
+a: command !
+b: faninany !
+   console ?
+ a: ?
+ a: ! b:
+
+pipe (java2class)
+   literal cmd /C dir /B *.java !
+   command !
+   rexx to join 20 / / !
+   specs,
+      /cmd /c javac -O / 1 1-* next !
+   console !
+a: command !
+b: faninany !
+   console ?
+ a: ?
+ a: ! b:
+

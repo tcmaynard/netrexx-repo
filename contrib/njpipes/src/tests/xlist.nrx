@@ -1,0 +1,24 @@
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class xlist extends stage
+
+method run() public
+
+   fid = arg()
+
+   work = 'cmd /c copy 'fid
+   loop forever
+      line = Rexx readto()
+      work = work'+'line'+'fid
+   catch StageError
+      rc = rc()
+      if rc=12 then do
+         output(work' x.txt')
+      catch StageError
+         rc = rc()
+      end
+   end
+
+exit(rc*(rc<>12))
+

@@ -1,0 +1,72 @@
+/* uncomment package if this code is in a subdirectory of one on your classpath
+ * and change xxxx to the name of the subdirectory
+ */
+-- package xxxx
+
+options binary
+
+import pipes.
+
+/* To use methods in pipes\utils.nrx  add 'uses utils' to the class statement */
+
+class template2 extends stage
+
+/* objects shared between the ...setup and run methods */
+
+properties private
+
+parm  = rexx
+rc    = int
+
+/* method to initialize a stage.  Only called once unless the arg() changes */
+
+method template2_setup() private signals StageError
+
+   a = arg()
+
+   parm = a
+
+   if rc<>0 then
+      signal StageError(11,'Error - template2 had setup problems')
+
+
+method run()
+
+   /* insert objects that need to be reset every invokation here */
+
+   rc  = 0
+
+   do -- to catch the terminating StageError
+
+      /* call ...setup only if required */
+
+      if doSetup() then
+         template2_setup()
+
+      /* setup code that must execute every time the stage object runs
+       *
+       * if there are setup problems then
+       *    signal StageError(11,'termplate1 had this error')
+       *
+       */
+
+      /* body of stage */
+
+      loop forever
+         robject = rexx peekto()          -- pass only rexx objects
+         output(robject)
+         readto()
+
+      /* catch any cast exceptions that occur and issue a StageError */
+
+      catch ClassCastException
+         signal StageError(13,'Error - Input not a rexx object')
+      end
+
+   catch err=StageError
+   end
+
+   rc = err.rc()
+
+exit(rc*(rc<>12))
+

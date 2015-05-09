@@ -1,0 +1,38 @@
+/* Generated from 'vectort1.nrx' 18 May 1999 22:49:48 [v1.148] *//* Options: Decimal Logo Trace2 Verbose1 */
+
+
+
+
+
+public class vectort1{private static final java.lang.String $0="vectort1.nrx";
+
+public vectort1() throws pipes.ThreadQ{super();java.util.Vector F;java.util.Vector T;java.util.Hashtable a$njp1;vectort1_vectorp1 p$njp1;java.util.Enumeration e;
+
+F=new java.util.Vector();
+T=new java.util.Vector();
+
+F.addElement((java.lang.Object)(new netrexx.lang.Rexx(5)));
+F.addElement((java.lang.Object)(new netrexx.lang.Rexx(4)));
+F.addElement((java.lang.Object)(new netrexx.lang.Rexx(3)));
+F.addElement((java.lang.Object)(new netrexx.lang.Rexx(2)));
+F.addElement((java.lang.Object)(new netrexx.lang.Rexx(1)));
+T.addElement((java.lang.Object)(new netrexx.lang.Rexx(99)));
+
+
+a$njp1=new java.util.Hashtable();
+a$njp1.put((java.lang.Object)(netrexx.lang.Rexx.toString(new netrexx.lang.Rexx('F'))),(java.lang.Object)F);
+a$njp1.put((java.lang.Object)(netrexx.lang.Rexx.toString(new netrexx.lang.Rexx('T'))),(java.lang.Object)T);
+p$njp1=vectort1_vectorp1.get((java.lang.Object)a$njp1);
+p$njp1.runpipe();
+
+
+e=T.elements();
+{for(;;){if(!e.hasMoreElements())break;
+netrexx.lang.RexxIO.Say(e.nextElement());
+}}return;}
+
+public static void main(java.lang.String a[]) throws pipes.ThreadQ{
+
+new vectort1();
+
+{System.exit(0);return;}}}

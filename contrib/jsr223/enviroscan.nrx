@@ -1,0 +1,242 @@
+options binary
+class enviroscan
+/*
+ COPYRIGHT AND PERMISSION NOTICE
+
+Copyright (C) 2011,2012 Kermit Kiser and others
+
+All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, provided that the above copyright notice(s) and this permission notice appear in all copies of the Software and that both the above copyright notice(s) and this permission notice appear in supporting documentation.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written authorization of the copyright holder. 
+*/ 
+properties static 
+		
+	 java_version=String
+	 java_home=String
+	 java_class_path=String
+	 java_library_path=String
+	 java_ext_dirs=String
+	 os_name=String
+	 os_arch=String
+	 os_version=String
+	 ant_home=String
+	 home=String
+	 homepath=String
+	 classpath=String
+	 userprofile=String
+	 
+	f=System.getProperty('file.separator')
+	s=System.getProperty('path.separator')
+	
+	dot=String "."
+	empty=String ""
+	
+	parms=java.util.List
+	scannedset=ArrayList()
+ 
+ method main(sa=String[]) static
+ 	 
+ 	 parms=Arrays.asList(sa)
+ 	 System.out.println("parms="(Object parms).toString())
+	 
+	 System.out.println("NetRexx Enviroscan version 1.8")
+	 
+	 badabing
+	 
+	 badaboom
+ 
+ method badabing static
+	
+	System.out.println("Displaying Java and NetRexx related environment values:")
+		
+ 	 System.out.println("Java properties:")
+ 	 
+	 java_version=System.getProperty("java.version")
+	 System.out.println("java.version:" System.getProperty("java.version"))
+	 
+	java_home= System.getProperty("java.home")
+	 System.out.println("java.home:" System.getProperty("java.home"))
+	
+	 java_class_path= System.getProperty("java.class.path")
+	 System.out.println("java.class.path:" System.getProperty("java.class.path"))
+	
+	java_library_path= System.getProperty("java.library.path")
+	 System.out.println("java.library.path:" System.getProperty("java.library.path"))
+	
+	java_ext_dirs= System.getProperty("java.ext.dirs")
+	 System.out.println("java.ext.dirs:" System.getProperty("java.ext.dirs"))
+	
+	os_name= System.getProperty("os.name")
+	 System.out.println("os.name:" System.getProperty("os.name"))
+	
+	os_arch= System.getProperty("os.arch")
+	 System.out.println("os.arch:" System.getProperty("os.arch"))
+	
+	os_version= System.getProperty("os.version")
+	 System.out.println("os.version:" System.getProperty("os.version"))
+	 
+	 classpath= System.getenv("CLASSPATH")
+	 if classpath\=null then
+	 	 System.out.println("CLASSPATH:" classpath)
+	 
+	 ant_home= System.getenv("ANT_HOME")
+	 if ant_home\=null then
+	 	 System.out.println("ANT_HOME:" ant_home)
+
+	 home= System.getenv("HOME")
+	 if home\=null then
+	 	 System.out.println("HOME:" home)
+	 
+	 homepath= System.getenv("HOMEPATH")
+	 if homepath\=null then
+	 	 System.out.println("HOMEPATH:" homepath)
+	 
+	 userprofile= System.getenv("USERPROFILE")
+	 if userprofile\=null then
+	 	 System.out.println("USERPROFILE:" userprofile)
+	 
+	 netrexxjava= System.getenv("NETREXX_JAVA")
+	 if netrexxjava\=null then
+	 	 System.out.println("NETREXX_JAVA:" netrexxjava)
+	 	 	 	 
+method badaboom static
+	
+	System.out.println("Beginning scan for Java and NetRexx runtime or compiler programs:")
+	
+	System.out.println("Checking java.home")
+	-- check java.home for a copy of tools.jar
+	bondukey(java_home)
+	
+	System.out.println("Checking java.home parent")
+	--	and up one directory to look for jdk dirs
+	phone_home=File(java_home).getParent
+	scandirs(phone_home)
+	
+	System.out.println("Checking java.home grandparent")
+	grand_home=File(phone_home).getParent
+	if grand_home\=null then do
+		scandirs(grand_home)
+		end
+
+	System.out.println("Checking Java extension directories")
+	--	check if tools.jar or NetRexx has been added to an extension directory
+	scanpath(java_ext_dirs)
+
+	System.out.println("Checking java.class.path directories")
+	--	check if tools.jar or NetRexx has been added to a classpath directory
+	scanpath(java_class_path)
+
+	System.out.println("Checking CLASSPATH directories")
+	--	check if tools.jar or NetRexx has been added to a classpath directory
+	if classpath \=null then scanpath(classpath)
+	
+	System.out.println("Checking System path directories")
+	--	check if tools.jar or NetRexx has been added to a path directory
+	scanpath(java_library_path)
+	
+	if ant_home\=null then do
+		System.out.println("Checking Ant directory")
+		bondukey(ant_home)
+		end
+		
+	if home\=null then do
+		System.out.println("Checking home directory")
+		bondukey(home||f".jedit")
+		end
+		
+	if homepath\=null then do
+		System.out.println("Checking homepath directory")
+		bondukey(homepath||f".jedit")
+		end
+		
+	if userprofile\=null then do
+		System.out.println("Checking userprofile directory")
+		bondukey(userprofile||f".jedit")
+		end				
+		
+method scanpath(path=String)	static
+	e=path
+	loop for 99
+		p=e.indexOf(s)
+		if p>=0 then do
+			p1=e.substring(0,p)
+			e=e.substring(p+1)
+			pathcheck(p1)
+			end
+		else do
+			pathcheck(e)
+			leave
+			end
+		end		
+		
+method pathcheck(e=String)	static
+	if e.startsWith('"') then e=e.substring(1)
+	if e.endsWith('"') then e=e.substring(0,e.length-1)
+	if e\==dot then
+		if e\==empty then
+			bondukey(e)
+	if e.indexOf(f"bin")>=0 then pathcheck(File(e).getParent)
+	
+method scandirs(base=String)	static
+	bf=File(base)
+	if \bf.isDirectory then return
+	conlist=bf.list
+	loop i=0 for conlist.length
+		tf=File(base||f||conlist[i])
+		if tf.isDirectory then bondukey(tf.getPath)
+		end
+		
+method flambam(burnbom=String) static
+	
+	if File(burnbom).exists then System.out.println("found:"burnbom)
+	
+method bondukey(durphon=String) static
+	if \parms.contains('allpaths') then 
+		if scannedset.contains(durphon) then return
+			else scannedset.add(durphon)
+	df=File(durphon)
+	if \df.exists then return
+	if \df.isDirectory then do
+		if df.getParent=null then return
+		bondukey(df.getParent)
+		return
+		end
+		
+	flambam(durphon||f"NetRexxDE.jar")
+--	flambam(durphon||f"jars"f"NetRexxDE.jar")
+	flambam(durphon||f"NetRexxScript.jar")
+	flambam(durphon||f"NetRexxPlugin.jar")
+--	flambam(durphon||f"jars"f"NetRexxScript.jar")
+	flambam(durphon||f"java.exe")
+	flambam(durphon||f"ant-netrexx.jar")
+--	flambam(durphon||f"lib"f"ant-netrexx.jar")
+	flambam(durphon||f"nrc.bat")
+	flambam(durphon||f"nrc.cmd")
+	flambam(durphon||f"nrc.sh")
+	flambam(durphon||f"NetRexxC.sh")
+	flambam(durphon||f"NetRexxC.cmd")
+	flambam(durphon||f"NetRexxC.bat")
+	flambam(durphon||f"NetRexxC.jar")
+--	flambam(durphon||f"jars"f"NetRexxC.jar")
+	flambam(durphon||f"NetRexxR.jar")
+	flambam(durphon||f"tools.jar")
+	flambam(durphon||f"ecj-4.2.jar")
+--	flambam(durphon||f"lib"f"tools.jar")
+--	flambam(durphon||f"lib"f"ecj-4.2.jar")
+--	flambam(durphon||f"lib"f"ext"f"NetRexxC.jar")
+--	flambam(durphon||f"lib"f"ext"f"tools.jar")
+--	flambam(durphon||f"lib"f"ext"f"ecj-4.2.jar")
+--	flambam(durphon||f"bundle"f"Classes"f"classes.jar")
+--	flambam(durphon||f"Classes"f"classes.jar")
+	flambam(durphon||f"classes.jar")
+	
+	bondukey(durphon||f"lib")
+	bondukey(durphon||f"ext")
+	bondukey(durphon||f"jars")
+	bondukey(durphon||f"bundle")
+	bondukey(durphon||f"Classes")
+

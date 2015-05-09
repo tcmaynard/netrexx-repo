@@ -1,0 +1,4 @@
+package org.apache.tools.ant.taskdefs.optional
+
+class NetRexxC extends org.apache.tools.ant.taskdefs.optional.NetRexx
+

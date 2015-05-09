@@ -1,0 +1,21 @@
+pipe (xranget1)
+   literal 1 66 a f-r k.5 66-77 88.5 Z !
+   split !
+   console
+
+import pipes.
+
+class xrangetest extends stage final
+
+method run()
+
+   loop forever
+      line = rexx peekto()
+      line = GetXrange(line)
+      output(line)
+      readto()
+   catch StageError
+   end
+
+rc = rc()
+exit(rc*(rc<>12))

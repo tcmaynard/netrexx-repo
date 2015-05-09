@@ -1,0 +1,42 @@
+/* uncomment package if this code is in a subdirectory of one on your classpath
+ * and change xxxx to the name of the subdirectory
+ */
+-- package xxxx
+
+options binary
+
+import pipes.
+
+class template1 extends stage
+
+/* run a basic stage that has very little setup to do */
+
+method run()
+
+   /* insert objects that need to be reset every invokation here */
+
+   rc = 0
+
+   do -- to catch the terminating StageError
+
+      /* setup code goes here
+       *
+       * if there are setup problems then
+       *    signal StageError(11,'termplate1 had this error')
+       *
+       */
+
+      /* body of the stage is here */
+
+      loop forever
+         object = peekto()        -- pass objects of any class
+         output(object)
+         readto()
+      end
+
+   catch e=StageError
+   end
+
+   rc = rc(e)     -- extract the rc from the StageError and update stage's rc
+
+exit(rc*(rc<>12))

@@ -1,0 +1,42 @@
+-- MUST be moved to the stages dir for the stageExit to be called...
+
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class xnop extends stage
+
+a = rexx
+
+method run()
+
+   a = arg()
+
+   loop forever
+      line = rexx peekto()
+      output(conv(line))
+      readto()
+   catch StageError
+   end
+
+   rc = rc()
+
+exit(rc*(rc<>12))
+
+method conv(v=rexx) returns rexx   -- not static since I want to access 'a'
+   return v                        -- in the overriden conv method
+
+method stageExit(pInfo=Rexx,o=Rexx) returns boolean signals StageError
+
+pid  = pInfo            -- pipe name
+name = pInfo[3]         -- stage name
+
+n = o[0]
+
+o[n+1]='class 'pid'_'name||pInfo[1]' extends xnop private'
+o[n+3]='method conv(v=rexx) returns rexx'
+o[n+4] = '   return super.a"-"v.reverse()'
+
+o[0]=n+6                             -- pass back the generated stage
+pInfo[3] = pid'_'name||pInfo[1]      -- call this stage instead
+
+return 1

@@ -1,0 +1,6 @@
+pipe (linktest)
+
+   genpipe= linkpipe(rexx 100) ?
+   .genpipe.out0 !
+   locate /0/ !
+   console

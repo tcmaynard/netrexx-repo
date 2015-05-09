@@ -1,0 +1,9 @@
+pipe (xlatetest1)
+
+   literal NetRexx is intended as a dialect of Rexx that can be efficient and portable. !
+   xlate e Z t 64!
+   console !
+   compare: compare equal /OK/ notequal /BAD at \\c, \\b/ less /Less: \\s/ more /More: \\s/ !
+   console ?
+   literal NZdRZxx is indZndZd as a dialZcd of RZxx dhad can bZ ZfficiZnd and pordablZ. !
+   compare:

@@ -1,0 +1,60 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program joinconttest09.nrx
+Program joinconttest10.nrx
+Program joinconttest11.nrx
+Program joinconttest12.nrx
+Program joinconttest13.nrx
+Program joinconttest14.nrx
+Program joinconttest15.nrx
+Program joinconttest16.nrx
+Program jointest.nrx
+Program jointest1.nrx
+Program jointest2.nrx
+Program litt1.nrx
+Program locatetest.nrx
+Program locatetest1.nrx
+Program locatetest2.nrx
+Program locatetest3.nrx
+Program locatetest4.nrx
+Program locatetest5.nrx
+Program locatetest7.nrx
+Program lookupt1.nrx
+Program lookupt2.nrx
+Program lookupt3.nrx
+Program lookupt4.nrx
+Program lookupt5.nrx
+Program lookupt6.nrx
+Program lookupt7.nrx
+Program lookupt8.nrx
+Program lookupt9.nrx
+Program mylist.nrx
+Compilation of 'joinconttest09.nrx' successful
+Compilation of 'joinconttest10.nrx' successful
+Compilation of 'joinconttest11.nrx' successful
+Compilation of 'joinconttest12.nrx' successful
+Compilation of 'joinconttest13.nrx' successful
+Compilation of 'joinconttest14.nrx' successful
+Compilation of 'joinconttest15.nrx' successful
+Compilation of 'joinconttest16.nrx' successful
+Compilation of 'jointest.nrx' successful
+Compilation of 'jointest1.nrx' successful
+Compilation of 'jointest2.nrx' successful
+Compilation of 'litt1.nrx' successful
+Compilation of 'locatetest.nrx' successful
+Compilation of 'locatetest1.nrx' successful
+Compilation of 'locatetest2.nrx' successful
+Compilation of 'locatetest3.nrx' successful
+Compilation of 'locatetest4.nrx' successful
+Compilation of 'locatetest5.nrx' successful
+Compilation of 'locatetest7.nrx' successful
+Compilation of 'lookupt1.nrx' successful [6 classes]
+Compilation of 'lookupt2.nrx' successful [6 classes]
+Compilation of 'lookupt3.nrx' successful [6 classes]
+Compilation of 'lookupt4.nrx' successful [6 classes]
+Compilation of 'lookupt5.nrx' successful [6 classes]
+Compilation of 'lookupt6.nrx' successful
+Compilation of 'lookupt7.nrx' successful [6 classes]
+Compilation of 'lookupt8.nrx' successful
+Compilation of 'lookupt9.nrx' successful [2 classes]
+Compilation of 'mylist.nrx' successful

@@ -1,0 +1,44 @@
+--- Variables for class tcpsniff_tcpsniffer ---
+_s_1  stage               p 44 67 102= 103 146 163 164 191
+_s_10 stage               p 53 76 129= 130 155 172 173 175
+_s_11 stage               p 54 77 132= 133 156 173 174 194
+_s_12 stage               p 55 78 135= 136 157 175 176
+_s_13 stage               p 56 79 138= 139 158 177 178
+_s_14 stage               p 57 80 141= 142 159 179 180
+_s_2  stage               p 45 68 105= 106 147 164 165 176 188
+_s_3  stage               p 46 69 108= 109 148 165 166 177 178 189
+_s_4  stage               p 47 70 111= 112 149 166 167 170
+_s_5  stage               p 48 71 114= 115 150 167 168 192
+_s_6  stage               p 49 72 117= 118 151 168 169 174 187
+_s_7  stage               p 50 73 120= 121 152 169 186 199
+_s_8  stage               p 51 74 123= 124 153 170 171 179 180 190 200
+_s_9  stage               p 52 75 126= 127 154 171 172 193
+a     Object              a 59= 60
+a     Object              a 82= 89 91
+a     Object              a 96 98
+a     String[]            a 209 211
+e     tcpsniff_tcpsniffer v 86= 88 89 91= 93 94
+i_A0  link                p 40 163= 182
+p     tcpsniff_tcpsniffer v 211= 212 213 214 214 214 217
+pool  Stack               s 37= 85 86 205 206
+
+--- Variables for class tcpsniff_tcpsniffer_rexx_change_5 ---
+_c_ Rexx    p 222 236= 239 248= 251
+_d_ Object  v 233= 234 235
+_d_ Object  v 245= 246 247
+_f_ boolean p 223= 227= 230 232= 238= 242 244= 250=
+_o_ Object  p 221 234 235= 236 246 247= 248
+
+--- Variables for class tcpsniff_tcpsniffer_rexx_change_9 ---
+_c_ Rexx    p 258 272= 275 284= 287
+_d_ Object  v 269= 270 271
+_d_ Object  v 281= 282 283
+_f_ boolean p 259= 263= 266 268= 274= 278 280= 286=
+_o_ Object  p 257 270 271= 272 282 283= 284
+
+--- Variables for class tcpsniff_tcpsniffer_rexx_change_11 ---
+_c_ Rexx    p 294 308= 311 320= 323
+_d_ Object  v 305= 306 307
+_d_ Object  v 317= 318 319
+_f_ boolean p 295= 299= 302 304= 310= 314 316= 322=
+_o_ Object  p 293 306 307= 308 318 319= 320

@@ -1,0 +1,27 @@
+/* Generated from 'addtest4.nrx' 19 May 1999 19:45:06 [v1.148] *//* Options: Decimal Logo Trace2 Verbose1 */
+
+pipe (addt4) gen 10 ! addtest4 ! console
+
+public final class addtest4 extends pipes.stage{private static final netrexx.lang.Rexx $01=netrexx.lang.Rexx.toRexx("Ending ");private static final netrexx.lang.Rexx $02=new netrexx.lang.Rexx(12);private static final java.lang.String $0="addtest4.nrx";
+
+public void run() throws pipes.ThreadQ{addtest4_addpt4 p$njp2=null;java.lang.Object line=null;int rc=0;
+
+netrexx.lang.RexxIO.Say("i-o : b 1, b 2 .. b 10");
+try{
+
+   addpipe (addpt4) *in0: ! specs /b/ 1 1-* nextw ! *out0:
+
+{for(;;){
+line=peekto();
+output(line);
+readto();
+}}}
+
+catch (pipes.StageError $1){
+rc=rc();
+}
+
+netrexx.lang.RexxIO.Say($01.OpCc(null,new netrexx.lang.Rexx(rc)));
+
+exit(((new netrexx.lang.Rexx(rc)).OpMult(null,new netrexx.lang.Rexx(((new netrexx.lang.Rexx(rc)).OpNotEq(null,$02))))).toint());return;}public addtest4(){return;}}
+

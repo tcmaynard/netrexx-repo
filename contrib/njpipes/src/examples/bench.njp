@@ -1,0 +1,25 @@
+/* */
+-- currently fails because there is no timer stage to be found
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class bench extends Object
+
+method bench(arg=Rexx)
+
+   say 'speed1'
+   pipe (speed1) literal 999 ! dup 99    ! timer   ! hole
+
+   say 'speed2'
+   pipe (speed2) literal 99  ! dup 99999 ! timer   ! hole
+
+   say 'speed3'
+   loop for 10
+      pipe (speed3) literal 99 ! dup 9999 ! timer   ! hole
+   end
+
+method main(a=String[]) static
+
+   bench(rexx(a))
+
+exit

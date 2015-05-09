@@ -1,0 +1,28 @@
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class counter extends stage
+
+method run()
+   one = int 0
+   two = int 0
+
+   loop forever
+      selectAnyInput()
+      readto()
+
+      if inStreamNumber()=0 then
+         one = one+1
+      else
+         two = two+1
+
+   catch StageError
+
+      say 'one 'one
+      say 'two 'two
+
+      exit(rc()*(rc()<>12))
+
+   end
+
+

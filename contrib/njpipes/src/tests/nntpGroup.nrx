@@ -1,0 +1,37 @@
+/** nntpResp
+
+This creates a pipe for the group option of tcpclient.  This implementation
+is not complete and will fail for many nntp command.  The logic to find the
+last line of a command is incorrect...
+
+*/
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class nntpGroup extends stage
+
+method run() public
+
+   rc = int 0
+
+   if inStreamState()>1 then
+      rc = 13
+   if outStreamState()>1 then
+      rc = 13
+
+   loop while rc=0
+      x = 0
+      l = rexx ''
+      a = rexx ''
+      loop until l='.' | (l.word(1).datatype('W') & l.word(1)>='500')
+         l = Rexx readto()
+         x = x+1
+         a[x] = l
+      end
+      a[0] = x
+      output(a)              -- output a rexx stem, use getstems to deblock
+   catch StageError
+      rc = rc()
+   end
+
+   exit(rc*(rc<>12))

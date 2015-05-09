@@ -1,0 +1,8 @@
+pipe (sorttest import tests. )
+
+   random 5000 !
+   timer !
+   sort A !
+   timer !
+   count lines !
+   console

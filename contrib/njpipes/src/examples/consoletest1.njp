@@ -1,0 +1,4 @@
+pipe (consoletest1 import tests. )
+
+   diskr buffer.data  !
+   console

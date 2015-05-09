@@ -1,0 +1,60 @@
+/* IBM Materials Licensed under International Components for Unicode  */
+/* Licence version 1.8.1 (ICU Licence) - Property of IBM              */
+/* IBM NetRexx                                                        */
+/* Copyright (c) 1995-2009 IBM Corp.                                  */
+/* Copyright (c) 2011- RexxLA                                         */
+/* ------------------------------------------------------------------ */
+/* NetRexx language processor                                     mfc */
+/* Copyright (c) IBM Corporation 1996, 2001.  All Rights Reserved.    */
+/* ------------------------------------------------------------------ */
+/* NetRexxC                                                           */
+/*                                                                    */
+/*  A command shell to run the translator and compile.                */
+/*                                                                    */
+/* Translate and compile one or more NetRexx programs.                */
+/*                                                                    */
+/* use as:  NETREXXC hello[.nrx] goodbye[.nrx]                        */
+/*                                                                    */
+/*   which will use the NetRexx translator to translate hello.nrx     */
+/*     to hello.java                                                  */
+/*   then will use JAVAC to compile hello.java to hello.class         */
+/*   and then repeats this for each file listed (unless error).       */
+/*                                                                    */
+/* Output files are placed in the current directory (they do not      */
+/* overwrite files in the classes hierarchy, unless that's the        */
+/* current directory).                                                */
+/*                                                                    */
+/* If any translate or compile fails, all processing stops.           */
+/*                                                                    */
+/* Any NetRexxT (translator) flags may be used, along with the        */
+/* following extra flags (and their inverses):                        */
+/*                                                                    */
+/*   -arg       = take rest of command line as arguments; imply -exec */
+/*   -nocompile = do not compile, and retain the .java file           */
+/*   -noconsole = do not display messages to console                  */
+/*   -exec      = interpret the first program                         */
+/*   -keep      = keep the java file after successful compilation (as */
+/*                xxx.java.keep).  This is assumed if an error during */
+/*                javac compilation.                                  */
+/*   -prompt    = prompt after first processing                       */
+/*   -savelog   = save messages to NetRexxC.log                       */
+/*   -time      = display timings if successful.                      */
+/*                                                                    */
+/* ------------------------------------------------------------------ */
+/* 1996.06.14 Initial                                                 */
+/* 1996.07.03 Add specific usage description                          */
+/* 1996.12.08 Add main(Rexx) returns int, for call-from-Java          */
+/* 1997.04.20 Interface to translator is now an array of filenames    */
+/* 1998.05.18 Add -console and -savelog                               */
+/* 1999.08.13 Allow ".. .." in main(Rexx,p); add main2(String[],p)    */
+/* 2000.02.08 Extend help to list all options                         */
+/* 2000.03.22 Add -prompt loop [AA 23 BHX-ORD]                        */
+/* 2000.10.16 Properly ignore -savelog if Printwriter specified       */
+/* 2011.08.13 Replaced with a stub for RexxLA package rename to org.netrexx.process       */
+/* ------------------------------------------------------------------ */
+package COM.ibm.netrexx.process
+options binary nodecimal strictcase strictargs nocomments
+
+class NetRexxC deprecated extends org.netrexx.process.NetRexxC
+
+

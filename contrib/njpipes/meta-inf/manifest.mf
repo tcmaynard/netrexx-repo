@@ -1,0 +1,797 @@
+Manifest-Version: 1.0
+
+Name: findtext.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2U7Amew9HFzlyQ/3YozcksqCzOQ=
+MD5-Digest: jucKFgLIkRfB5CKn9kIHCg==
+
+Name: findtext_rexx_pad_2.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: euhSDnBNf4WRxp4GCGkrbGaZdNc=
+MD5-Digest: Yp1jif2TUClfsVH6YnRNHQ==
+
+Name: findtext_specs_5.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: kgR/VrcLhHWh7PL19X+wZU7xzcY=
+MD5-Digest: 2vczkZvig3dkxPE90NNqbg==
+
+Name: java2class.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: n7pwn7vPMnHjb3CWamSxfAmW/9k=
+MD5-Digest: IMBVtI1VOP7bLCNQhq7LAA==
+
+Name: java2class_rexx_join_3.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QyQlFwoYkYJGrJ15n3Z7yj6O9+4=
+MD5-Digest: SSMuviEfhDBZa/Q2NTTcEA==
+
+Name: java2class_specs_4.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6pVY0hRZae0j9KbXGW5F3eI2VhU=
+MD5-Digest: fM9UPNV/SBZbEL/7MGy7UQ==
+
+Name: mkClass.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: R5brwYja6uZiJ7xRjN0Y1C4HSCg=
+MD5-Digest: te9ubIiiKVwu35JPDIJQ/w==
+
+Name: mkClass_rexx_change_3.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HhycMhykrClzGUYlgE8/pEPIt7A=
+MD5-Digest: KJbW5t9YoPseft6JgJY7Bw==
+
+Name: mkClass_specs_5.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: eQM1gS4TO4c7Xvy3x0pjxRLq5Dk=
+MD5-Digest: tO/oJO4hKRp1VI3Ym/jq3A==
+
+Name: mkJava.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: jv25axPlf+MjVAcfWE3iqQHBspA=
+MD5-Digest: d/Xxs2U11EnhEYWpNBow0g==
+
+Name: mkJava_rexx_change_3.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: yVEOao9IM+WT3N5Hlt+i0Y73zPM=
+MD5-Digest: 7f/jZrMiqKTdJu6Wq7ZRiQ==
+
+Name: mkJava_specs_5.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EncORdVTQ4WIfWL5i1l92oJ490w=
+MD5-Digest: 3MVwg3wqqqJxFO3SZt7sLA==
+
+Name: njp.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: z7zgTdyKbCatrs7m4TEV4su5V7U=
+MD5-Digest: 6+9NW0Us9SlbtTK9L+LICg==
+
+Name: njp_cnf.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EeEkxwF03ctWXVgwlp6KBWHzoWE=
+MD5-Digest: aTT3KZpPosSQVQhoL4Bkbg==
+
+Name: pipes/DString.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: tzGkNro7bU4Blz+z+XX3ZEZ2Aqk=
+MD5-Digest: Jd+ZjE2lFLpzLttH6z4LAw==
+
+Name: pipes/IRange.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: TmgT4U3ZC+aQhOs0uTCW22GnjZ4=
+MD5-Digest: rzcbZ6eYQmSsoYPwvq3gWQ==
+
+Name: pipes/RingBuf.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 5/+QqI33uTEVDUfUf7l5Objclz0=
+MD5-Digest: zuQvoN3TIzdoaAd4nTt6nA==
+
+Name: pipes/RunnablePool.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: SxltM/nBRIfmvSg2toayMtMDQEM=
+MD5-Digest: JkUBJSLSg4vbnu5xZFV7hw==
+
+Name: pipes/StageError.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: It6RR/GnfrBPShc/ntbfw4WpLyM=
+MD5-Digest: gaydsudyLclx3BxR07lqtQ==
+
+Name: pipes/ThreadPool.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pSB09D25okeHbeUi9AQ91vL8xB4=
+MD5-Digest: Q7GZEhyyUDg1B9XXUVFqtw==
+
+Name: pipes/ThreadQ.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 5AAPC/7AmGfkxcc8eAL3jb4zu4Y=
+MD5-Digest: ap23YpHS9uDhfZqA2A1q8Q==
+
+Name: pipes/_stage.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: aJ77hYyvQZXAPjetmYZAZ3VIkZI=
+MD5-Digest: J33Jnf4nvXYIKELYU1hh/w==
+
+Name: pipes/compiler.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: q/J+GmYNp+MbnYZn2HQGB6DeSgc=
+MD5-Digest: HOcDOSTkLEfbjPbCzcVf+g==
+
+Name: pipes/filterNjp.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: xs205PqYhPZvBaY/6yea/z21Ecc=
+MD5-Digest: CVBwm808rkRRtPksY+QCng==
+
+Name: pipes/link.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Wo2+JfD6E+UOyXKebTXikOFkugM=
+MD5-Digest: EAETZ8+0PB5YHH+urkoEYQ==
+
+Name: pipes/node.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: aUEVFFYAVd4BLIR+6rI+I8Mmde0=
+MD5-Digest: k9F9TW230mbA/CuyPJFZxQ==
+
+Name: pipes/pipe.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: /TYuYmKFO+u0rbBnCsPRnm5JiIw=
+MD5-Digest: bON0q6VEHuYhJ7RIAJqUfQ==
+
+Name: pipes/pipe2nrx.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 4uJrQLoiGSNsHnmUK8mfx3Lm+co=
+MD5-Digest: nWmZU4WJSYlrJSGo5J8CPg==
+
+Name: pipes/processNjp.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: sxFTregIY1+rHPiUlsNBNQeAgMk=
+MD5-Digest: kXYBVq2zUVGAmkAb4nIhOg==
+
+Name: pipes/readconfig.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dNMlF00SBxkYqPyNFHmIAVpaE1M=
+MD5-Digest: dMt/MM5jbyGW6NEJOhiORw==
+
+Name: pipes/readgroup.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QLH2HNBKyURGgjAHR9DJObc9ICo=
+MD5-Digest: Vk9q1CDrkA8AZEgho9KFIw==
+
+Name: pipes/stage.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: qHnUXpqupSm7utBWBj3vFCG3++M=
+MD5-Digest: RHP57VJ/BsiRm8uHF8/ing==
+
+Name: pipes/utils.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: YxDlkOKNsqq/UsIyKOSc3rzez84=
+MD5-Digest: 7uuPHa/JZU/hiAxvsePF9Q==
+
+Name: pipes/writepipe.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: RaSP0pVmZTHhXrhGudCi/FWgkp0=
+MD5-Digest: Za/abgEHPbvLXEsVvwp9pw==
+
+Name: stages/_rexx.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: gfRozqXdDp0WHzrf9D3ajUK2qVw=
+MD5-Digest: M5S6+HwT1RXU4Ge9Rrpt0Q==
+
+Name: stages/_string.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: yO0rdJp/3Lr4LYm3xkV0Bz8K9gk=
+MD5-Digest: 2OYNALysNCTHbqe2Z0fG6A==
+
+Name: stages/_vector.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 705aZfKcnLVcPVa0jgnacUJtdSo=
+MD5-Digest: 3t/lK063z+5/3lhFInX5DQ==
+
+Name: stages/abbrev.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: unAsZz2OAxuFWxYzBTkIu2/timA=
+MD5-Digest: DaP6hj/Zw2mIaNrnIJg1iQ==
+
+Name: stages/append.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: i3S5pPtKTQd2UG8q5YFYpbVLI2w=
+MD5-Digest: IXio1zdolle/rRncxMs3+g==
+
+Name: stages/array.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: fN3BRhzBEbM7loXk0oBzY6sQBUE=
+MD5-Digest: 5XcM2pvA9UyKw2Q+7dH4hw==
+
+Name: stages/arraya.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: sv3BKiebaLA8fYLKNOeex5buNjQ=
+MD5-Digest: uuOhMpLW4SUPm1PUOUptSw==
+
+Name: stages/arrayr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: bD5131VtCaJnHzR7bfP29x3ufvQ=
+MD5-Digest: 1NMgc6/WcCcNDLEAvDSUHg==
+
+Name: stages/arrayw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: VU3TSZluaitWaVHc5AUuz74t//g=
+MD5-Digest: 03ZVVH/1uCycrS8rhCkZJw==
+
+Name: stages/between.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: E3wDAATyB6SzQYC01GsqN5ske2Y=
+MD5-Digest: Ojcoigf0HbhFmTKwHPKsnw==
+
+Name: stages/buffer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: R7N1zRKZnAN/JtPYFIIBIfxYWOE=
+MD5-Digest: GCWtqKShM0JzIN+fUQENew==
+
+Name: stages/casei.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cP4Dre4S/vYvRE61pEv3qt1vpTM=
+MD5-Digest: 7J/N0ksCbaFm7/J7te9+Hw==
+
+Name: stages/change.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cHrr4WUNN0FjLz0UVTRMbL++cxM=
+MD5-Digest: p1gxgvfV7wN5x9lTdfD5NQ==
+
+Name: stages/chop.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0XqzhCEUPSyQq55yBim/bxoVQlU=
+MD5-Digest: Mr4XVrXpCwyJZWnsgl498g==
+
+Name: stages/command$writer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Rp3If7rhNfX8KHQJHeG2b4rUBA8=
+MD5-Digest: rvxREK9xH2xw54Y7TmIZWg==
+
+Name: stages/command.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CwLnbADvPH9RwJPciokf+BCSVR4=
+MD5-Digest: iwI1NLAbQCyvfUCZ2pPhmA==
+
+Name: stages/compare.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: mgQkuFkpRH5HYfkR8Mi/6w8sWes=
+MD5-Digest: vNVO7cNuhI97PEPLbqPxvw==
+
+Name: stages/console.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: /+deDFtiGPutbmjfYhiaQhz9Crk=
+MD5-Digest: elq629F0CAqzMZ3It3rXuw==
+
+Name: stages/copy.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: i1U07/8jJa2xNvV5U794P7llXTc=
+MD5-Digest: kDg4RgUxkFy1q7afiBPF+Q==
+
+Name: stages/count.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: xKnQV01teTDxLkT1rQZ8MaAD5ow=
+MD5-Digest: t0L8R8CrT24VmrhHV2rxBA==
+
+Name: stages/dam.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: B6Lk6RZKl5O0Lx+i6+GzLO0J7+o=
+MD5-Digest: 5XAeUYdwGh/5tYJM3gJY0g==
+
+Name: stages/deal.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wbch/5A1eGjsoVRYCi92mxV/PXY=
+MD5-Digest: GxJqDwxtm91uWJegSmJLoA==
+
+Name: stages/deblock.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QTWGs3L91GrLqb7wumyd9Zi5z0c=
+MD5-Digest: wRTv61FEqOX+xZyQd0WwtA==
+
+Name: stages/dict.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1qGXOSYmjTO1Fdg8+QStzsDJihc=
+MD5-Digest: U+dkAspki8XRMVTH9Kg3/g==
+
+Name: stages/dicta.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pRr/8LzHowbRmP7Xht8czwv2nZc=
+MD5-Digest: A0cJAizm4melQavH64AJmQ==
+
+Name: stages/dictr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: hpU4SI+fYUVT5HzNOohvM8kCups=
+MD5-Digest: OyZ38sD/YuQzam0PW9QI8Q==
+
+Name: stages/dictw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 5/NgM6hwxeZm1FfpPyZCDLlBkGQ=
+MD5-Digest: aBBaCzrRicSrrFTbOfJKpg==
+
+Name: stages/disk.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: VX1FGG8YLjZ8Ad6vKWZi3qcTPp8=
+MD5-Digest: QVjpdIfwKS4f5Vd1E/YFjQ==
+
+Name: stages/diska.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2weuqBuz8eorCnAPDjlmxLzp1SE=
+MD5-Digest: kzOcovqyhUCiGAwmcE2TfQ==
+
+Name: stages/diskr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: b9A0unjRZMfM42hey255fgQ+xKU=
+MD5-Digest: gOwdGacVdgv5P2ClFWqGuA==
+
+Name: stages/diskslow.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: ArBNgP/jnmzwO3/TYwJEKCk2bFE=
+MD5-Digest: 0LhXiO1Fth2Duk7eAhw+Ww==
+
+Name: stages/diskw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: XrMwwOwe48+CctBjaZWsS5QlsxQ=
+MD5-Digest: QT63qb3fMkpucO6bKRFZXw==
+
+Name: stages/drop.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HC7ujFYVO/gZjVVk4dnX/Anp5CE=
+MD5-Digest: i68RgPCWfqRdW32gxq7zaQ==
+
+Name: stages/dup.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: LmzynPmYJhBIOS40fDRI8JfY5Lk=
+MD5-Digest: GWMaSjJZYre8dgu0db4N2g==
+
+Name: stages/elastic$writer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pbWVP9XKMTc/+eONqL363vVSE8A=
+MD5-Digest: W/jPsM1Q6myaGBBldqWs3g==
+
+Name: stages/elastic.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +ptHKBxmlpj8OcNLb6zZeS5fQhM=
+MD5-Digest: 7Z/46Cedn3Cu/xb0ID9HgA==
+
+Name: stages/fanin.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GgJOkj/e2v0vcc1hseZimXCRY9k=
+MD5-Digest: YSsq2UyE+z5zz4yc/d79Hg==
+
+Name: stages/faninany.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 42epGk/lWn4L7emc9l+xJEiJgAo=
+MD5-Digest: /KpEAJV0IBLkhfUkm3sRig==
+
+Name: stages/fanout.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 38YEJzIhGrBZGYMvZeG/oYuOKuk=
+MD5-Digest: Pj+VPWL7XYKVB/r98y2Bgg==
+
+Name: stages/fblock.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: wtYnBnu7vt7JrKWDxnY6/dEwdgc=
+MD5-Digest: M66+tcJUU7UDS5TTZ7b1vA==
+
+Name: stages/file.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: bamgjvVPgNZGDBa49Qs0O0H/RPk=
+MD5-Digest: QjgSLuzR6hvsO+vQt5GWtw==
+
+Name: stages/filea.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: R8vqKow36OVGVXN2Xw7y+dq4uYs=
+MD5-Digest: dpZf1UmJNJwuZIto6qhP+A==
+
+Name: stages/filer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CLoEsHfzPy8FaI5zeUNB1XNt920=
+MD5-Digest: shK5VDgbIjIDy1lbmErjfQ==
+
+Name: stages/fileslow.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: V7Df49cG+AuPiaftfXurs4wElpI=
+MD5-Digest: a+I7w67KQndIY6cn298dbg==
+
+Name: stages/filew.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: v5m9bH3gDjWUm/c+vHlVVl3Cuk4=
+MD5-Digest: LWaR77XJ+zNllf1ZyUF6jA==
+
+Name: stages/find.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: oNSc5bYupKQl9B5pp7Z8vqGoQ8I=
+MD5-Digest: mgxXKoxu47FG+zxuUR60MA==
+
+Name: stages/frlabel.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 7Jm0WS8mTieJtMimRpkUXvUo7xM=
+MD5-Digest: lfS1Vj4dvUwj4UvPr7yiHg==
+
+Name: stages/frtarget.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: d/RUPeweIAKK6lavRcDUGD53tAk=
+MD5-Digest: 2B8DI6eisXrguY2roTLh0w==
+
+Name: stages/gate.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0UJM0PylDD/a9TlxpG/cy9OBWRo=
+MD5-Digest: BeKFL1x8WKgf6HDWczDAfw==
+
+Name: stages/getfiles.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: uIzKezDbWWiteICuunck1syGC8c=
+MD5-Digest: VJKEXD2tGCOgKK+IymbPpQ==
+
+Name: stages/getovers.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: FjVfGletRv506Hen3lqj1oVsVUU=
+MD5-Digest: Fb0hG3IB+ZjOaHDs+H3ypw==
+
+Name: stages/getstems.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: T+TXK1MAM9B5QDbdtvRYF7eUN04=
+MD5-Digest: Vn59JikaXg4DA7oqgJqsxw==
+
+Name: stages/hash.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1rfmWFC/bJQb2BhZ6WT+B2vcxXA=
+MD5-Digest: 3aLHVGx6bfWYmOLvVeZj0g==
+
+Name: stages/hasha.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: JBdaso2YtaEzQJn1AzThnvO02Xk=
+MD5-Digest: F0a213ZLLcI+n8N9UI3aQw==
+
+Name: stages/hashr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: e+nLAoZ5hHan+PL4bIwquQ8l5pA=
+MD5-Digest: GSNsubOl7qDU8wjm0AUjOg==
+
+Name: stages/hashw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pICTOEgLb1qOpvJl3Z4jzcTf8g0=
+MD5-Digest: ycv+K2HVWaxHpxrv9HjL3w==
+
+Name: stages/hole.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: gVbj/oa+26Qn/ENngGYjCPsP3vc=
+MD5-Digest: 5NyDnLgV0Tc/2SoELFoDGA==
+
+Name: stages/insert.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: zbJozCuN4Uap236Q/5+WRrtxw1A=
+MD5-Digest: SURN1DqpiM30LBs5zRbFEA==
+
+Name: stages/inside.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: A1PBbJECwak5pBC9HQ/oVZtD4tk=
+MD5-Digest: 1WKkTNBiR+hA/xKLXLbG8g==
+
+Name: stages/join.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: TxdSx1K1fRTKTH/mWdYS+gS6k7c=
+MD5-Digest: bcXAJ3yFJbCIL4GJ8qpzUg==
+
+Name: stages/joincont.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GJFdMeE8WjHN+AVzhoMnEAmYP/4=
+MD5-Digest: 2PsU0CuMxr6///DqRy4Hlg==
+
+Name: stages/juxtapose.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: MhR8UsFZ8ORkfOHz0ED25NafVlU=
+MD5-Digest: +s02b4hkn8yw383wKEqdEg==
+
+Name: stages/literal.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 8tZg8CYv4CdSSDq1wP70nEgI7pU=
+MD5-Digest: EoHcsJrTnHFNQFyfc+MJDA==
+
+Name: stages/locate.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Mu0hAQs33/sSsKRAxd12u2VVfsE=
+MD5-Digest: Den/2UYcOFxIgNfHfK0bTA==
+
+Name: stages/lookup.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: EvnLNoB3/fZzoFNVJ9LrR+J0jW4=
+MD5-Digest: z8/8paudHPFMO51Ou9sjRw==
+
+Name: stages/nfind.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: KVILxiHVBsOSGgbFzu7GZbfrTew=
+MD5-Digest: epOlvSMLQl+cgfWu1LpnGA==
+
+Name: stages/nlocate.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: QgNqmDt1kIPG0JR6YXF447CUaNo=
+MD5-Digest: rIRxAE89hTYsCxiV1POyPg==
+
+Name: stages/noeofback.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 1gANzQVkfTF328TkT0Gtbus4jc8=
+MD5-Digest: jX+wCew5lkecbpvHOMjUPg==
+
+Name: stages/nop.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Z2oChU8Aa/XhsWjT+kRWuiilk3Q=
+MD5-Digest: 9uuaVfBfav9zU6i+uOrF0g==
+
+Name: stages/not.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 9t7beByBL9aIacn64572pTpKZjk=
+MD5-Digest: 0+PQvJPF89yVJqlcZE2SSQ==
+
+Name: stages/notinside.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: db3hxCqTBRGt6TerSkwdTugUWUw=
+MD5-Digest: Bo1+fBWUUjdEhgSSytFiHw==
+
+Name: stages/outside.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: njmgj04IxkrdfddE9fT/6dfn+TE=
+MD5-Digest: 6BG79F7+bOuit1h/Jmt8TA==
+
+Name: stages/over.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: FmkE6G0SFAARNnB+jygdAMMhdrw=
+MD5-Digest: wEk0QVqdOS2sRqsWOqIiBw==
+
+Name: stages/pad.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: g2Sivw/Tzql0uncu/qzhrk5lX2I=
+MD5-Digest: i8zU56xu71fxATawrEd2KA==
+
+Name: stages/pick.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: zsdFq2A7LLnC5lZflWxL93UICHs=
+MD5-Digest: Fvdf59HNcUC8xOYNv4V+rg==
+
+Name: stages/prefix.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: JKo+S7Hm//vUxDVjf/0bDmX3lP0=
+MD5-Digest: 4AJnq/PwxvDH4nDOmvMVcA==
+
+Name: stages/qsort.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: GRNUUCAXy1BAgL46Rz0lINZBl+Q=
+MD5-Digest: z1XXsrCMBEoTFGuh3zQ14w==
+
+Name: stages/reverse.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 7rrg0oEe3OZSMV77HxThDIrIMl0=
+MD5-Digest: xnb5BN3BHZz0wJb7QvgN0Q==
+
+Name: stages/serialize.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: B2bPYu2uKPn1R1PAWOlNyVAsrwE=
+MD5-Digest: zr4XINzaCB8y2TiFVS4e5w==
+
+Name: stages/sort.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: elsEAKHnufiVoso4xXF3f+RQ+Gs=
+MD5-Digest: YVBc6SoXixeTMthh0rY1ug==
+
+Name: stages/sortClass.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: OJz7Yo7isQoUXnQmk4sAZ5dEkBI=
+MD5-Digest: cX86kRlfsS9rFogwEVMfeQ==
+
+Name: stages/sortRexx.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: X5Tbuq6lLwQk+3akY6GmxC5ngq0=
+MD5-Digest: rseGkjjKRR+p+dZj7XgTfQ==
+
+Name: stages/specs.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Z6bFn+UxK16wIJ7Jb3eJfjjH+3s=
+MD5-Digest: wXOGzQcmr6vdlYB4aqXdtQ==
+
+Name: stages/split.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: HZQ7dg839+hqcgv+tK8bo5yv/Sc=
+MD5-Digest: OLZy2mVDInRDbiLHhihlnA==
+
+Name: stages/sqlselect.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2Iv/S+8oZ7v5hn2SA4b6AODxc5M=
+MD5-Digest: yPQAZlpTNqsA7xUAjvPA4Q==
+
+Name: stages/stem.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +mLdyeaLC2OLBkvUPpQrfaDZ8XE=
+MD5-Digest: pgrS7nrKRLZ9xyhlENtZQQ==
+
+Name: stages/stema.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: LPCXTJSmPG90xl3l2AI1/bGWyRU=
+MD5-Digest: AoqIyn7MgX3zJV1+o2537Q==
+
+Name: stages/stemr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Yq69SlQUF9vAI4UwJwHom1uzCZM=
+MD5-Digest: LDCbPi6fUPEikkXZcUvXqQ==
+
+Name: stages/stemw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CSW46sG1asmbAJAZGpaRefBnza8=
+MD5-Digest: Int4IOJz0ewDgPt7pIQq3Q==
+
+Name: stages/strfind.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: oERbqheAzEEuWatR/N7jSMn9VEw=
+MD5-Digest: jSQ5A0nOiKhzduhrfnNfaA==
+
+Name: stages/strfrlabel.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: hleUfVEy2YlGoENv9fPcP66PGx4=
+MD5-Digest: k3W3rYLUoQjYpNm/uYtMrw==
+
+Name: stages/strliteral.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 3xEBBQPBfgf1PlX9TYK/ckyD960=
+MD5-Digest: LSOeUrGcRH1uuUSL8EQ6pw==
+
+Name: stages/strnfind.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: UrgKUrNtYTR3YTpCY++mxtqwFfY=
+MD5-Digest: sYmDqJgz3cx/W+zRs/Xpzg==
+
+Name: stages/strtolabel.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: cO31rJccViemy/JhgZDMPF1EP+M=
+MD5-Digest: ENIDBr35Cxzl/xcFNYipvw==
+
+Name: stages/take.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: mkBhtybyzOSKRD8EkUXDZ/sFGcU=
+MD5-Digest: yOXR5HW45eV5x1g/bVq0Zg==
+
+Name: stages/tcpclient$ear.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 7g8n5MJ/kRHtA3rk/e5L5/f/gzs=
+MD5-Digest: 6EbP+oOxdReOrx/LCg/gDQ==
+
+Name: stages/tcpclient.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +kPEKKdoflRnSB9pt+43NZxFCg8=
+MD5-Digest: M5XXSzvsP/GIoUqdtF09Sw==
+
+Name: stages/tcpdata$ear.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 0GJ0TG+Lug3yTOj84Vd+shK0Vb8=
+MD5-Digest: 65RNW6/SO9xs2IUcBKb7nQ==
+
+Name: stages/tcpdata.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: xZnVaWElvXU5IGiroMETY2+YeXI=
+MD5-Digest: VujqaNm5wBvF+mmFduIlIA==
+
+Name: stages/tcplisten.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pq4flVwMN/bdq+ryNY15bcqCS5E=
+MD5-Digest: +36GoOhYuy/oYiVBaB3Afg==
+
+Name: stages/timestamp.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Wyw9cTCYi6ExkNwiSrTxROwppkc=
+MD5-Digest: soGZoXkNDK/Q3g525kphDg==
+
+Name: stages/tokenize.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: CUb2b05a0BCTyLBct1NRj+fjaek=
+MD5-Digest: +PRKNiHR33bGeBy/txdMhQ==
+
+Name: stages/tolabel.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: dmAynJSXntdvYZxV66h3/AEfGS8=
+MD5-Digest: gv/Nz09q2DeQwGLOsUgG4g==
+
+Name: stages/totarget.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: +VsxQO2ROTDuiQXnmgldETrHTrM=
+MD5-Digest: uRhkGJZaYsssgQntGn6/Qw==
+
+Name: stages/unique.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: anLSpQ78b4BRLkEpRHdYcdBfG14=
+MD5-Digest: wUzX7G6AjvjwH+h/zdjJaQ==
+
+Name: stages/var.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: MMh0elbTXQ56fSkx5noS1AokQ3k=
+MD5-Digest: CJRH96ggwpEVBvCVRbHPgg==
+
+Name: stages/vector.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: La8EhjmfkmHOjUnY3GOzoucbJMA=
+MD5-Digest: cQdEVTahTF0kVnCeMJk80Q==
+
+Name: stages/vectora.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: YIWSt0+lqm3F7KK2MRKtPvvEv70=
+MD5-Digest: XctT58sodI2HTJqR7OH3/A==
+
+Name: stages/vectorr.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: eKDJUA8KJbccLPwTa8sN9biDdlI=
+MD5-Digest: 3K+869v13tzjnAb2HzhmbQ==
+
+Name: stages/vectorw.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: C1mEihJ3OxwWm+NXrah5L5Sutbo=
+MD5-Digest: hejbdsXxs0kOS+QQttBf5g==
+
+Name: stages/xlate.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: YeLssIbeihTCcKGnZLJ7ZzLVULI=
+MD5-Digest: iXjAK+HKP3r4iXhV/3YBVg==
+
+Name: stages/zone.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 8Ak7oa7K/rhNje7owCCos6Bcl8w=
+MD5-Digest: ugTVqA9iR5E83EK6t1+6RA==
+
+Name: tests/DStringTest.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: iWOWnBnc0ht4hWgntttTtnpQFpc=
+MD5-Digest: kmnZGB6mxxliKPjJafTEUw==
+
+Name: tests/comment.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: MYU5xCt2Y7gMzBHyu9IAre4i0ps=
+MD5-Digest: H8VBWne0fJeDWq8Nfp3q9A==
+
+Name: tests/counter.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: BKE8lxg64265/S8xxxihfa++bFA=
+MD5-Digest: 4m2ecsHxi63QyDtfhJ+gfg==
+
+Name: tests/gen.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: Y+QT5U/5xfe5RzBmDZfxlaQBImo=
+MD5-Digest: v+dZMCf00SmPacHnxHDuvA==
+
+Name: tests/list.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: pBGfhss0ZJYlHqRIimo+UzJByJE=
+MD5-Digest: ERfMnXUdDlJCWnQVtHLNEA==
+
+Name: tests/nntpGroup.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: c/j+mJtAXLKJ6RsSqc6oomvlUBw=
+MD5-Digest: /0yBdA8egfjkFt5/jMiVbg==
+
+Name: tests/random.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: joWTCxiftInihPUC68+VUfe3ZuY=
+MD5-Digest: CZeOjel4M23cbBwM7wHQqQ==
+
+Name: tests/task.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: BjikolsJAX5TwAlUM4XVOofaWgw=
+MD5-Digest: HhBoMjJOt7nl/lHL3D6oHw==
+
+Name: tests/timer.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: NNpWPcT4cUOGrV96uEdm1fIE6Ck=
+MD5-Digest: la96sdCibxHX64fa4tMWAg==
+
+Name: tests/watch.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: prNNTppMzopS4INFREa5fATS8Rc=
+MD5-Digest: YMLMbCorPbVwkCYzEg4Dtw==
+
+Name: tests/xconsole.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 2+H+RYUAyw8DA/6JzUTDp5p/g3A=
+MD5-Digest: GNQZKHmIF09GzUoe0Eyd3Q==
+
+Name: tests/xlist.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: 6XU1ScxwTcVVzHG+0g3hFuqAFOc=
+MD5-Digest: IjzEUZM63+HkdoGDjYiJvg==
+
+Name: tests/xnop.class
+Digest-Algorithms: SHA MD5 
+SHA-Digest: psWb4bXIihDIlK5/CXfUfQRtA/E=
+MD5-Digest: x80WjVDYAw7RF0F+TsQCaA==
+

@@ -1,0 +1,60 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program sertest_serpipe1.nrx
+Program sertest_serpipe2.nrx
+Program sertest.nrx
+Program sipt1.nrx
+Program siptest_sipcp1.nrx
+Program siptest.nrx
+Program sorttest.nrx
+Program spawnt1.nrx
+Program spawntest_spawnee.nrx
+Program spawntest_spawngate.nrx
+Program spawntest.nrx
+Program specst1.nrx
+Program specst2.nrx
+Program specst3.nrx
+Program speed.nrx
+Program splittest00.nrx
+Program splittest01.nrx
+Program splittest02.nrx
+Program splittest03.nrx
+Program splittest04.nrx
+Program splittest05.nrx
+Program splittest06.nrx
+Program splittest07.nrx
+Program splittest08.nrx
+Program splittest09.nrx
+Program splittest10.nrx
+Program splittest11.nrx
+Program splittest12.nrx
+Program splittest13.nrx
+Compilation of 'sertest_serpipe1.nrx' successful
+Compilation of 'sertest_serpipe2.nrx' successful [2 classes]
+Compilation of 'sertest.nrx' successful
+Compilation of 'sipt1.nrx' successful
+Compilation of 'siptest_sipcp1.nrx' successful
+Compilation of 'siptest.nrx' successful
+Compilation of 'sorttest.nrx' successful [2 classes]
+Compilation of 'spawnt1.nrx' successful
+Compilation of 'spawntest_spawnee.nrx' successful
+Compilation of 'spawntest_spawngate.nrx' successful
+Compilation of 'spawntest.nrx' successful
+Compilation of 'specst1.nrx' successful [2 classes]
+Compilation of 'specst2.nrx' successful [2 classes]
+Compilation of 'specst3.nrx' successful [2 classes]
+Compilation of 'speed.nrx' successful
+Compilation of 'splittest00.nrx' successful
+Compilation of 'splittest01.nrx' successful
+Compilation of 'splittest02.nrx' successful
+Compilation of 'splittest03.nrx' successful
+Compilation of 'splittest04.nrx' successful
+Compilation of 'splittest05.nrx' successful
+Compilation of 'splittest06.nrx' successful
+Compilation of 'splittest07.nrx' successful
+Compilation of 'splittest08.nrx' successful
+Compilation of 'splittest09.nrx' successful
+Compilation of 'splittest10.nrx' successful
+Compilation of 'splittest11.nrx' successful
+Compilation of 'splittest12.nrx' successful
+Compilation of 'splittest13.nrx' successful

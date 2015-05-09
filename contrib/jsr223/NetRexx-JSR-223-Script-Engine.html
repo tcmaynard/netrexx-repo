@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>NetRexx JSR 223 Script Engine</title><meta content="Kermit Kiser" name="author"></head><body><h2 style="text-align: center;">NetRexx JSR 223 Script Engine</h2><h3>This
+document contains information about the NetRexx Script Engine created
+to allow NetRexx to run as a Java JSR 223 scripting language.</h3><big>2012-11-28 Usage notes for current version:</big><br><br><ul><li>The
+jar file containing the engine is NetRexxJSR223.jar and it must be
+installed along with the NetRexxC.jar library (in the same
+directory if you want to try java -jar NetRexxJSR223).</li><li>The actual name of the script engine is
+org.netrexx.jsr223.NetRexxScriptEngine but only the last part of the name
+is needed for access from scripts.</li><li>All engine scope bindings
+are passed to the script as variables - note that binding names
+containing periods have the periods changed to underscores to be legal variable names.</li><li>Arguments are passed both as the normal "arg" string and as the array binding <code>"javax.script.argv" ie script variable&nbsp;</code><code>"javax_script_argv".</code></li><li>To
+return an object to the calling platform the script must place it in a
+special binding before exiting like this: NetRexxScriptEngine.putObject("returnobject",~someobject~)</li>
+  <li>Scripts are executed via the NetRexxA API for interpreting a program from a string so they are not written to files. Other than that -<br>
+  </li>
+<li>The current&nbsp;version of the engine
+has no other optimization and only support for bare minimum JSR223 features (No
+compilable, invokeable, preparse or caching or user profiles or
+console, etc.).</li><li>When
+running as an Ant Script task, properties whose names contain periods
+are not passed to the bindings and must be accessed via
+project.getProperty('some.name')</li>
+  <li>The genius who designed Ant local properties did not allow bulk access, so they are not passed in the bindings which means the above line is true for them also unless ==&gt;<br>
+  </li>
+  <li>Workaround - Simply define a local Ant property as a global first
+and the scriptengine will overlay the global value with the local value
+in the bindings map<br>
+  </li>
+<li>The jar file contains a simple "print hello" verification program
+which can be executed like this: &nbsp;java -jar NetRexxJSR223.jar</li><li>More complex testing can be done&nbsp;using the <a href="http://java.sun.com/javase/6/docs/technotes/tools/share/jrunscript.html">jrunscript program from the latest JDK</a> as follows:&nbsp;</li><li>Prompt
+mode testing (one line ad hoc programs - use CTRL Z, ENTER to exit on
+Windows anyway): jrunscript -cp NetRexxJSR223.jar -l NetRexx</li><li>Pass a script file to the engine like this:  jrunscript -cp NetRexxJSR233.jar -l NetRexx -f myprogram.nrx</li><li>When running as an Ant Script task, properties can be set via
+project.setProperty('some.name','some value')</li>
+  <li>There are no standards for jsr223 interactions that are helpful for NetRexx so I created my own:</li>
+  <li>Script parms can be passed in an "arg" binding. Parse flags can
+be passed with a "netrexxflags" binding or in Ant with the usual
+"ant.netrexx.verbose", etc properties.</li>
+  <li>Ant scripts can use the nested classpath facility - It is
+automatically added to the classpath that NetRexx scans. Likewise any
+path segments from a thread context URLclassloader.</li>
+  <li>The engine will run programs (ie that have a main class) as well as scripts but bindings cannot then be auto added to the program namespace so- <br>
+  </li>
+  <li>Programs have to load bindings like this: NetRexxScriptEngine.getObject("objectname")</li>
+</ul><big>Questions that need answers:</big><br style="font-weight: bold;"><ul><li>Does it work on *nix systems also?</li><li>Can it run as a JSR223 engine under the jEdit ScriptEnginePlugin?</li><li>Can it run as a BSF 3.0 script engine?</li><li>Can this run as an extension (ext directory)?</li><li>What platforms can actually use a JSR223 engine? Eclipse? OpenOffice? ...?</li><li>It seems like embedded web services might be a target for this application - can anyone test there? Glassfish?</li></ul><big>Features that may need to be added for an advanced release, etc:</big><br><ul><li>NetRexxA parse and reflection call</li><li>Cache parsed scripts</li><li>Preparse any scripts in user.home/scripts directories</li><li>Add support for user profile variables and options panel to set them</li><li>Add an optional script console to view detailed script output and parse output</li><li>Reflecting errors to the original code would be nice!</li><li>Add compilable and invokeable support</li><li>Add hashcode file signatures with length in case originating file system is not available to identify cached scripts</li><li>build.xml that works for *nix and Windows both!</li><li>Sample scripts to demo/test all features.</li><li>*** Add support for redirected print streams and input streams ***</li><li>dynamic classpath support</li></ul></body></html>

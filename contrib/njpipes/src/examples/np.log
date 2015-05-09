@@ -1,0 +1,468 @@
+O 201 NewsPlex v1.6 (no posting)
+
+I MODE READER
+
+O 201 no posting
+
+I LIST EXTENSIONS
+
+O 500 error
+
+I GROUP Dev-Kit-for-Linux
+
+O 211 118 118 235 Dev-Kit-for-Linux selected
+
+I GROUP comp.os.linux.announce
+
+O 211 198 20 424 comp.os.linux.announce selected
+
+I GROUP comp.os.linux.development.system
+
+O 211 1646 169 3968 comp.os.linux.development.system selected
+
+I GROUP comp.os.os2.announce
+
+O 211 32 3 61 comp.os.os2.announce selected
+
+I GROUP comp.os.os2.beta
+
+O 211 158 9 302 comp.os.os2.beta selected
+
+I GROUP scitech.display.doctor.linux
+
+O 211 47 1 47 scitech.display.doctor.linux selected
+
+I GROUP sympatico.announce
+
+O 211 16 3 38 sympatico.announce selected
+
+I GROUP vmware.for-linux.experimental
+
+O 211 1 318 318 vmware.for-linux.experimental selected
+
+I GROUP vmware.for-linux.configuration
+
+O 211 1 2410 2410 vmware.for-linux.configuration selected
+
+I NEWGROUPS 991108 120944
+
+O 231 list of new newsgroups follows
+
+O ibmpub.java.aix 150 1 y
+
+O ibmpub.java.announce 2 1 y
+
+O ibmpub.java.cics 50 3 y
+ibmpub.java.netrexx 1 1 y
+
+O ibmpub.java.os2 385 1 y
+
+O ibmpub.java.os390 249 6 y
+ibmpub.java.os400 132 1 y
+
+O ibmpub.java.test 3 1 y
+ibmpub.java.vmesa 5 1 y
+ibmpub.java.windows 128 1 y
+ibmpub.landp.discussion 2 1 y
+ibmpub.landp.test 9 1 y
+ibmpub.win2k.mqseries 10 1 y
+alt.aquaria.killies 18 13 y
+
+O alt.aquaria.marketplace 20 10 y
+
+O comp.os.linux.advocacy 38910 1016 y
+
+O comp.os.os2.utilities 619 14 y
+
+O net.aquaria.config 6 2 y
+
+O comp.os.linux.alpha 1261 37 y
+
+O comp.os.linux.announce 424 20 y
+
+O sympatico.vitesse 1146 28 y
+
+O comp.os.os2.mail-news 466 27 y
+
+O comp.os.linux.development.apps 3500 98 y
+
+O comp.os.linux.development.system 3968 169 y
+
+O comp.os.linux.hardware 4467 11 y
+
+O comp.os.linux.m68k 533 20 y
+
+O comp.os.linux.misc 11838 37 y
+
+O comp.os.linux.networking 12318 1 y
+
+O comp.os.linux.portable 1465 90 y
+
+O comp.os.linux.powerpc 3592 265 y
+
+O comp.os.linux.questions 1269 11 y
+
+O comp.os.linux.setup 7246 28 y
+
+O comp.os.linux.x 3000 8 y
+
+O comp.os.os2.apps 2869 91 y
+
+O comp.os.os2.advocacy 4309 237 y
+
+O comp.os.os2.announce 61 3 y
+
+O comp.os.os2.beta 302 9 y
+
+O comp.os.os2.bugs 1358 44 y
+
+O comp.os.os2.comm 224 11 y
+
+O comp.os.os2.games 169 9 y
+
+O rec.aquaria.marine.misc 1960 61 y
+
+O comp.os.os2.marketplace 246 4 y
+
+O comp.os.os2.misc 4979 409 y
+
+O comp.os.os2.moderated 111 6 y
+
+O comp.os.os2.multimedia 700 27 y
+
+O comp.os.os2.networking 50 1 y
+
+O comp.os.os2.networking.misc 560 16 y
+
+O comp.os.os2.networking.server 306 9 y
+
+O comp.os.os2.networking.tcp-ip 803 13 y
+
+O comp.os.os2.networking.www 148 6 y
+
+O comp.os.os2.programmer 47 2 y
+
+O comp.os.os2.programmer.misc 619 21 y
+
+O comp.os.os2.programmer.oop 73 2 y
+
+O comp.os.os2.programmer.porting 123 1 y
+
+O comp.os.os2.programmer.tools 252 4 y
+
+O comp.os.os2.programming 8 1 y
+
+O comp.os.os2.scitech 103 6 y
+
+O comp.os.os2.setup 71 6 y
+
+O comp.os.os2.setup.misc 2083 203 y
+
+O comp.os.os2.setup.storage 651 17 y
+
+O comp.os.os2.setup.video 516 17 y
+
+O rec.aquaria.freshwater.plants 1101 7 y
+
+O rec.aquaria.marine.reefs 4844 74 y
+
+O rec.aquaria.marketplace 767 23 y
+
+O net.aquaria.killies.gar 1 1 y
+
+O sci.space.tech 1242 35 y
+
+O net.aquaria.marine 14 1 y
+
+O rec.aquaria.freshwater.cichlids 2890 63 y
+
+O rec.aquaria.freshwater.goldfish 1345 19 y
+
+O rec.aquaria.freshwater.misc 2835 23 y
+
+O scitech.display.doctor.linux 47 1 y
+
+O scitech.display.doctor.linux.beta 27 1 y
+
+O Dev-Kit-for-Linux 235 118 y
+
+O ibm.software.db2.udb.linux.beta 792 1 y
+
+O ibm.software.java.linux 117 1 y
+ibm.software.on-demand-server.linux.beta 5 1 y
+ibm.software.udb.linux.beta 28 1 y
+vmware.for-linux.configuration 2410 2410 y
+
+O vmware.for-linux.experimental 318 318 y
+
+O ahn.tech.linux 353 7 y
+
+O alt.binaries.warez.linux 865 103 y
+
+O alt.linux 540 200 y
+
+O alt.linux.sux 13 9 y
+
+O vmware.for-linux.installation 1306 1306 y
+
+O alt.os.linux 1081 441 y
+
+O alt.os.linux.caldera 629 215 y
+
+O alt.os.linux.mandrake 947 343 y
+
+O alt.os.linux.slackware 395 142 y
+
+O vmware.for-linux.misc 1757 1757 y
+
+O alt.sex.fetish.linux 1218 540 y
+
+O alt.uu.comp.os.linux 11 11 y
+
+O alt.uu.comp.os.linux.questions 198 111 y
+
+O vmware.guest.linux 294 294 y
+
+O apana.lists.os.linux.8086 1 1 y
+
+O apana.lists.os.linux.admin 1 1 y
+
+O apana.lists.os.linux.kernel 1 1 y
+
+O cern.linux 33 2 y
+
+O apana.lists.os.linux.net 2 1 y
+
+O apana.lists.os.linux.ppp 2 1 y
+
+O apana.lists.os.linux.redhat 35 2 y
+
+O apana.lists.os.linux.tape 1 1 y
+
+O aus.computers.linux 2512 57 y
+
+O be.comp.os.linux 2171 33 y
+
+O cn.bbs.comp.linux 5 3 y
+
+O linux.debian.bugs.closed 3912 89 y
+
+O linux.debian.bugs.dist 8038 201 y
+
+O linux.debian.devel 3744 108 y
+
+O linux.debian.user 2445 63 y
+
+O linux.dev.scsi 30 4 y
+
+O linux.dev.sound 204 1 y
+
+O linux.net.masquerade 68 2 y
+
+O linux.redhat 1751 6 y
+
+O linux.redhat.announce 218 4 y
+
+O linux.redhat.axp 35 1 y
+
+O linux.redhat.digest 326 13 y
+
+O stardock.discussion 275 1 y
+
+O stardock.games 33 11 y
+
+O stardock.games.galciv 27 2 y
+
+O stardock.games.sf 255 39 y
+
+O stardock.games.tcm 64 3 y
+
+O stardock.iconpackager 201 3 y
+
+O stardock.iconpackager.binaries 39 1 y
+
+O stardock.news 20 1 y
+
+O stardock.od.windows.cm 175 8 y
+
+O stardock.od.windows.general 978 50 y
+
+O stardock.os2 824 71 y
+
+O stardock.os2.support 107 12 y
+
+O stardock.pminews 18 1 y
+
+O stardock.win32 2 1 y
+
+O stardock.win32.support 17 4 y
+
+O hannover.uni.comp.linux 224 6 y
+
+O hanse.linux 31 3 y
+
+O it.comp.linux 32169 3635 y
+
+O stardock.windowblinds 1398 120 y
+
+O stardock.windowblinds.binaries 343 13 y
+
+O stardock.windowblinds.builderblinds 122 8 y
+
+O stardock.windowblinds.development 432 29 y
+
+O stardock.windowblinds.support 167 20 y
+
+O hun.lists.mlf.linux 4022 85 y
+
+O hun.lists.mlf.linux-hw 435 9 y
+
+O hun.lists.mlf.linux-kezdo 3039 96 y
+
+O it.comp.linux.annunci 58 4 y
+
+O it.comp.linux.development 963 22 y
+
+O it.comp.linux.pluto 85 5 y
+
+O it.comp.linux.setup 7010 104 y
+
+O japan.comp.linux 38 20 y
+
+O kingston.os.linux 45 3 y
+
+O fr.comp.os.linux 496 20 y
+
+O fr.comp.os.linux.annonces 83 2 y
+
+O fr.comp.os.linux.configuration 19732 2188 y
+
+O fr.comp.os.linux.moderated 204 4 y
+
+O ger.pc.linux 685 11 y
+
+O git.unix.linux.mailing-lists.ale 7 1 y
+
+O gstv.linux 7 3 y
+
+O han.comp.os.linux 480 13 y
+
+O han.sys.linux 5 1 y
+
+O linux.redhat.install 10386 47 y
+
+O linux.redhat.list 80 3 y
+
+O linux.redhat.misc 2019 6 y
+
+O linux.redhat.ppp 921 16 y
+
+O linux.redhat.rpm 1016 8 y
+
+O linux.samba 1132 45 y
+
+O linux.scsi.ncr53c8xx 13 1 y
+local.lists.suse-linux 2 1 y
+man.linux 3 1 y
+man.unix.linux 7 1 y
+
+O maus.os.linux 4 2 y
+
+O muc.lists.linux-kernel 4949 126 y
+
+O muc.lists.linux68k 2 1 y
+
+O sbay.linux 8 1 y
+
+O computer42.mail2news.linux-alert 17 3 y
+
+O cz.comp.linux 7215 136 y
+
+O cz.comp.linux.czman 12 2 y
+
+O dc.org.linux-users 192 3 y
+
+O de.alt.comm.isdn4linux 4474 106 y
+
+O de.comp.os.linux.hardware 74 6 y
+
+O de.comp.os.linux.misc 130 3 y
+
+O de.comp.os.linux.networking 111 5 y
+
+O de.comp.os.linux.x 19 3 y
+ed.linux 72 2 y
+
+O es.comp.os.linux 798 19 y
+
+O esp.comp.so.linux 353 10 y
+
+O fido.ger.linux 4804 66 y
+
+O fido.linux-ger 44 2 y
+
+O fido.linux_ger 3 1 y
+
+O fido7.ru.linux 10983 664 y
+
+O fido7.ru.unix.linux 1558 19 y
+
+O fj.os.linux 2998 59 y
+
+O tw.bbs.comp.linux 33487 483 y
+
+O fr.comp.os.linux.debats 3622 304 y
+
+O rec.aquaria.tech 724 5 y
+
+O gaia.fido.linux 1 1 y
+
+O saar.comp.os.linux 45 6 y
+
+O saar.lists.linux-m68k 72 6 y
+
+O sci.space.history 2532 69 y
+
+O sci.space.news 361 5 y
+
+O sci.space.policy 3531 68 y
+
+O sci.space.science 703 8 y
+
+O qc.comp.os.linux.aide 1080 39 y
+
+O ucb.os.linux 73 2 y
+
+O uiuc.sw.linux 6 3 y
+
+O z-netz.alt.linux 550 12 y
+
+O pt.comp.so.linux 1054 34 y
+
+O sympatico.highspeed 41067 1913 y
+
+O tnn.os.linux 99 4 y
+
+O qc.comp.os.linux.annonces 22 3 y
+
+O qc.comp.os.linux.ecoles 15 1 y
+
+O qc.comp.os.linux.general 258 2 y
+
+O sfnet.atk.linux 5203 80 y
+
+O net.computers.os.unix.linux 16 2 y
+
+O nf.comp.linux 78 1 y
+
+O nl.comp.os.linux 8487 262 y
+
+O no.linux 39 3 y
+
+O hun.lists.mlf.linux-doc 6 1 y
+
+O hun.lists.mlf.linux-flame 4913 78 y
+
+O sympatico.generale 84 3 y
+
+O umich.linux 82 6 

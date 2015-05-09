@@ -1,0 +1,38 @@
+-- query an SMTP server to see if its active
+
+import pipes.
+import stages.
+
+class tcpfcp extends Object
+
+method tcpfcp(h=rexx)
+
+   if h='' then
+      h = 'localhost'
+
+   loop for 10
+
+      a = rexx ''
+
+      pipe (tcppipe stall 6000 end ? debug 0 )
+	literal ClientGet\n URI=KSK@jpg/adult/image/amatuer_lesbians.jpg\n HopsToLive=50\n EndMessage !
+        split !
+        console !
+        rexx from tcpclient {h} 8082 greeting oneresponse timeout 5000 linger 100 deblock C !
+        copy !
+        console 
+
+      do
+         java.lang.Thread.currentThread().sleep(10000)
+      catch InterruptedException
+      end
+
+   end
+
+method main(a=String[]) static
+
+   tcpfcp(rexx(a))
+   exit
+
+
+

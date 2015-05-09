@@ -1,0 +1,17 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program comment.nrx
+Program counter.nrx
+Program DStringTest.nrx
+Program gen.nrx
+Program list.nrx
+Program nntpGroup.nrx
+Program random.nrx
+Program task.nrx
+Program timer.nrx
+Program watch.nrx
+Program xconsole.nrx
+Program xnop.nrx
+ 29 +++ method stageExit(pInfo=Rexx,o=Rexx) returns boolean signals StageError
+    +++                                                             ^^^^^^^^^^
+    +++ Warning: Checked exception 'StageError' is in SIGNALS list but is not signalled within the method

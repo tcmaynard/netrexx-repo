@@ -1,0 +1,64 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program comparetest7.nrx
+Program comparetest8.nrx
+Program comparetest9.nrx
+Program consoletest1.nrx
+Program consoletest2.nrx
+Program consoletest3.nrx
+Program counttest.nrx
+Program counttest1.nrx
+Program counttest2.nrx
+Program counttest3.nrx
+Program counttest4.nrx
+Program counttest5.nrx
+Program counttest6.nrx
+Program damtest.nrx
+Program deadlock.nrx
+Program dealsec.nrx
+Program dealtest.nrx
+Program deblockt01.nrx
+Program deblockt02.nrx
+Program deblockt03.nrx
+Program deblockt04.nrx
+Program deblockt05.nrx
+Program deblockt06.nrx
+Program deblockt07.nrx
+Program deblockt08.nrx
+Program deblockt09.nrx
+Program deblockt10.nrx
+Program dictt1_dictp1.nrx
+Program dictt1.nrx
+Program dirtest.nrx
+Program dropf.nrx
+Compilation of 'comparetest7.nrx' successful
+Compilation of 'comparetest8.nrx' successful
+Compilation of 'comparetest9.nrx' successful
+Compilation of 'consoletest1.nrx' successful
+Compilation of 'consoletest2.nrx' successful
+Compilation of 'consoletest3.nrx' successful
+Compilation of 'counttest.nrx' successful
+Compilation of 'counttest1.nrx' successful
+Compilation of 'counttest2.nrx' successful
+Compilation of 'counttest3.nrx' successful
+Compilation of 'counttest4.nrx' successful
+Compilation of 'counttest5.nrx' successful
+Compilation of 'counttest6.nrx' successful
+Compilation of 'damtest.nrx' successful [4 classes]
+Compilation of 'deadlock.nrx' successful
+Compilation of 'dealsec.nrx' successful
+Compilation of 'dealtest.nrx' successful [4 classes]
+Compilation of 'deblockt01.nrx' successful
+Compilation of 'deblockt02.nrx' successful
+Compilation of 'deblockt03.nrx' successful
+Compilation of 'deblockt04.nrx' successful
+Compilation of 'deblockt05.nrx' successful
+Compilation of 'deblockt06.nrx' successful
+Compilation of 'deblockt07.nrx' successful
+Compilation of 'deblockt08.nrx' successful
+Compilation of 'deblockt09.nrx' successful [2 classes]
+Compilation of 'deblockt10.nrx' successful
+Compilation of 'dictt1_dictp1.nrx' successful
+Compilation of 'dictt1.nrx' successful
+Compilation of 'dirtest.nrx' successful [2 classes]
+Compilation of 'dropf.nrx' successful

@@ -1,0 +1,4 @@
+-- hello.njp
+
+     pipe (aname sep |)
+        Literal "hello" | Console

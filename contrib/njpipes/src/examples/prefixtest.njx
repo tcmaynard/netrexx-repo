@@ -1,0 +1,8 @@
+pipe (prefixtest )
+
+   nums= linkpipe(rexx 50) ?
+   gen 100  !
+   prefix .nums.out0 !
+   locate /0/ !
+   console
+

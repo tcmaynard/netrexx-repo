@@ -1,0 +1,8 @@
+rm *.class
+rm *.crossref
+rm *.java
+rm *.java.keep
+
+java -ms4M -mx64m -cp $CLASSPATH COM.ibm.netrexx.process.NetRexxC -nocompile -savelog link pipe _stage stage StageError node utils DString IRange RingBuf ThreadPool ThreadQ RunnablePool
+
+exit

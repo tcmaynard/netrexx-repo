@@ -1,0 +1,62 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program betweentest6.nrx
+Program betweentest7.nrx
+Program buffert1.nrx
+Program buffert2.nrx
+Program buffert3.nrx
+Program buffert4.nrx
+Program buildtests.nrx
+Program callt1.nrx
+Program calltest1_cp1.nrx
+Program calltest1.nrx
+Program callt2.nrx
+Program calltest2_cp1.nrx
+Program calltest2.nrx
+Program callt3.nrx
+Program calltest3_cp3.nrx
+Program calltest3.nrx
+Program changetest01.nrx
+Program changetest02.nrx
+Program changetest03.nrx
+Program changetest04.nrx
+Program changetest05.nrx
+Program changetest06.nrx
+Program changetest07.nrx
+Program changetest08.nrx
+Program changetest09.nrx
+Program changetest10.nrx
+Program changetest11.nrx
+Program changetest12.nrx
+Program changetest13.nrx
+Program changetest14.nrx
+Compilation of 'betweentest6.nrx' successful
+Compilation of 'betweentest7.nrx' successful
+Compilation of 'buffert1.nrx' successful
+Compilation of 'buffert2.nrx' successful
+Compilation of 'buffert3.nrx' successful
+Compilation of 'buffert4.nrx' successful [2 classes]
+Compilation of 'buildtests.nrx' successful [3 classes]
+Compilation of 'callt1.nrx' successful
+Compilation of 'calltest1_cp1.nrx' successful
+Compilation of 'calltest1.nrx' successful
+Compilation of 'callt2.nrx' successful [3 classes]
+Compilation of 'calltest2_cp1.nrx' successful
+Compilation of 'calltest2.nrx' successful
+Compilation of 'callt3.nrx' successful
+Compilation of 'calltest3_cp3.nrx' successful [2 classes]
+Compilation of 'calltest3.nrx' successful
+Compilation of 'changetest01.nrx' successful
+Compilation of 'changetest02.nrx' successful
+Compilation of 'changetest03.nrx' successful
+Compilation of 'changetest04.nrx' successful
+Compilation of 'changetest05.nrx' successful
+Compilation of 'changetest06.nrx' successful
+Compilation of 'changetest07.nrx' successful
+Compilation of 'changetest08.nrx' successful
+Compilation of 'changetest09.nrx' successful
+Compilation of 'changetest10.nrx' successful
+Compilation of 'changetest11.nrx' successful
+Compilation of 'changetest12.nrx' successful
+Compilation of 'changetest13.nrx' successful
+Compilation of 'changetest14.nrx' successful

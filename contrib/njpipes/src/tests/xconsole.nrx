@@ -1,0 +1,22 @@
+import org.netrexx.njpipes.pipes.
+import org.netrexx.njpipes.stages.
+
+class xconsole extends stage
+
+method run() public
+
+   a = arg()
+
+   do
+      loop forever
+         line = Rexx peekto()
+         say a' 'line
+         output(line)
+         readto()
+      end
+   catch StageError
+      rc = rc()
+   end
+
+   exit(rc*(rc<>12))
+

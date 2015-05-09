@@ -1,0 +1,50 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program findtest5.nrx
+Program findtest6.nrx
+Program gatet1.nrx
+Program gatet2.nrx
+Program getstemtest_testpipe.nrx
+Program getstemtest.nrx
+Program hasht1_hashp1.nrx
+Program hasht1.nrx
+Program aname.nrx
+Program ilinkpipe.nrx
+Program insidetest1.nrx
+Program insidetest2.nrx
+Program insidetest3.nrx
+Program insidetest4.nrx
+Program insidetest5.nrx
+Program insidetest6.nrx
+Program insidetest7.nrx
+Program joinconttest01.nrx
+Program joinconttest02.nrx
+Program joinconttest04.nrx
+Program joinconttest05.nrx
+Program joinconttest06.nrx
+Program joinconttest07.nrx
+Program joinconttest08.nrx
+Compilation of 'findtest5.nrx' successful
+Compilation of 'findtest6.nrx' successful
+Compilation of 'gatet1.nrx' successful [2 classes]
+Compilation of 'gatet2.nrx' successful [2 classes]
+Compilation of 'getstemtest_testpipe.nrx' successful
+Compilation of 'getstemtest.nrx' successful
+Compilation of 'hasht1_hashp1.nrx' successful
+Compilation of 'hasht1.nrx' successful
+Compilation of 'aname.nrx' successful
+Compilation of 'ilinkpipe.nrx' successful
+Compilation of 'insidetest1.nrx' successful
+Compilation of 'insidetest2.nrx' successful
+Compilation of 'insidetest3.nrx' successful
+Compilation of 'insidetest4.nrx' successful
+Compilation of 'insidetest5.nrx' successful
+Compilation of 'insidetest6.nrx' successful
+Compilation of 'insidetest7.nrx' successful
+Compilation of 'joinconttest01.nrx' successful
+Compilation of 'joinconttest02.nrx' successful
+Compilation of 'joinconttest04.nrx' successful
+Compilation of 'joinconttest05.nrx' successful
+Compilation of 'joinconttest06.nrx' successful
+Compilation of 'joinconttest07.nrx' successful
+Compilation of 'joinconttest08.nrx' successful

@@ -1,0 +1,156 @@
+/* tcpsmtp_tcppipe - Pipes for NetRexx version 0.53 */
+
+-- literal HELO grover\n~QUIT\n !
+-- split at ~ !
+-- rexx from tcpclient arg(string 'h'} 25 greeting oneresponse timeout 1000 linger 1 deblock C !
+-- copy !
+-- find 250 !
+-- stem a ?
+-- -_ap_3: !
+-- deblock C !
+-- _ap_3: 
+
+import pipes.
+import stages.
+import tests.
+
+options binary
+
+class tcpsmtp_tcppipe extends pipe final
+
+properties static private
+
+   pool = Stack()
+
+properties private
+
+_s_1 = stage
+_s_2 = stage
+_s_3 = stage
+_s_4 = stage
+_s_5 = stage
+_s_6 = stage
+_s_7 = stage
+
+
+method setContext(a=Rexx) returns pipe
+
+   setRexx('a',a)
+
+return (pipe this)
+
+method tcpsmtp_tcppipe(a=object null)
+   setup(a)
+
+method reset() private
+
+   stage_reset()
+   pipe_reset()
+
+   _s_1.stage_reset()
+   _s_2.stage_reset()
+   _s_3.stage_reset()
+   _s_4.stage_reset()
+   _s_5.stage_reset()
+   _s_6.stage_reset()
+   _s_7.stage_reset()
+
+method get(a=object null) returns tcpsmtp_tcppipe static
+
+   do
+      do protect pool
+         e = tcpsmtp_tcppipe pool.pop()
+      end
+      e.reset()
+      e.setArg(a)
+   catch EmptyStackException
+      e = tcpsmtp_tcppipe(a)
+   end
+   e.config()
+   return e
+
+method setup(a=object) private
+
+   setArg(a)
+   setName('tcpsmtp_tcppipe')
+   setRunaway(1000)
+
+   _s_1 = literal()
+   _s_1.setName('literal_1')
+
+   _s_2 = split()
+   _s_2.setName('split_2')
+
+   _s_3 = tcpsmtp_tcppipe_rexx_tcpclient_3()
+   _s_3.setName('tcpsmtp_tcppipe_rexx_tcpclient_3')
+
+   _s_4 = copy()
+   _s_4.setName('copy_4')
+
+   _s_5 = find()
+   _s_5.setName('find_5')
+
+   _s_6 = stemw()
+   _s_6.setName('stemw_6')
+
+   _s_7 = deblock()
+   _s_7.setName('deblock_7')
+
+   setup2()
+
+   addstage(_s_1)
+   addstage(_s_2)
+   addstage(_s_3)
+   addstage(_s_4)
+   addstage(_s_5)
+   addstage(_s_6)
+   addstage(_s_7)
+
+method config() private
+
+   connect(_s_1,0,_s_2,0)
+   connect(_s_2,0,_s_3,0)
+   connect(_s_3,0,_s_4,0)
+   connect(_s_4,0,_s_5,0)
+   connect(_s_5,0,_s_6,0)
+   connect(_s_3,-1,_s_7,0)
+   connect(_s_7,0,_s_3,-2)
+
+method setup2() private
+
+   _s_6.setRelPriority(+2)
+   _s_3.setRelPriority(+1)
+   _s_1.setArg(Rexx "HELO grover\n~QUIT\n")
+   _s_2.setArg(Rexx "at ~")
+   _s_5.setArg(Rexx "250")
+   _s_6.setArg(Rexx "a")
+   _s_7.setArg(Rexx "C")
+
+
+method run()
+
+   _s_3.setArg(arg(string 'h')" 25 greeting oneresponse timeout 1000 linger 1",boolean 1)
+
+
+   setDebug(12)
+   go()
+   do protect pool
+      pool.push(this)
+   end
+
+method main(a=String[]) static
+
+   p = tcpsmtp_tcppipe.get(buildArg(a))
+   p.runpipe()
+   if p.rc()<>0 & p.rc()<>12 then say "RC="p.rc
+
+
+exit p.rc()
+
+class tcpsmtp_tcppipe_rexx_tcpclient_3 extends tcpclient uses IRange private
+
+method output(d=object) signals StageError
+   super.output(object2rexx(d))
+
+
+

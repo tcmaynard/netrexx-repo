@@ -1,0 +1,80 @@
+NetRexx portable processor, version 1.148
+Copyright (c) IBM Corporation, 1998.  All rights reserved.
+Program strnfindtest5.nrx
+Program strnfindtest6.nrx
+Program strnfindtest7.nrx
+Program strtolabeltest.nrx
+Program taketestf1.nrx
+Program taketestf2.nrx
+Program taketestl1.nrx
+Program taketestl2.nrx
+Program target1.nrx
+Program target2.nrx
+Program target3.nrx
+Program target4.nrx
+Program tasktest.nrx
+Program watch.nrx
+Program tcpecho_watch.nrx
+Program tcpecho_bridge1.nrx
+Program tcpecho_bridge2.nrx
+Program tcpecho.nrx
+Program tcpserv.nrx
+Program tcpreq.nrx
+Program tcpexample_tcplog.nrx
+Program tcpexample.nrx
+Program tcprec.nrx
+Program tcpsend.nrx
+Program tcpsmtp_tcppipe.nrx
+Program tcpsmtp.nrx
+Program tcpsniffer.nrx
+Program tcpsniff_tcpsniffer.nrx
+Program tcpsniff.nrx
+Program tcpreq1.nrx
+Program tcpserv1.nrx
+Program tcptask_tcplog.nrx
+Program tcptask.nrx
+Program testpipe_apipe.nrx
+Program testpipe.nrx
+Program tokenizetest.nrx
+Program tokenizetest1.nrx
+Program vectort1_vectorp1.nrx
+Program vectort1.nrx
+Compilation of 'strnfindtest5.nrx' successful
+Compilation of 'strnfindtest6.nrx' successful
+Compilation of 'strnfindtest7.nrx' successful
+Compilation of 'strtolabeltest.nrx' successful
+Compilation of 'taketestf1.nrx' successful
+Compilation of 'taketestf2.nrx' successful
+Compilation of 'taketestl1.nrx' successful
+Compilation of 'taketestl2.nrx' successful
+Compilation of 'target1.nrx' successful [2 classes]
+Compilation of 'target2.nrx' successful [2 classes]
+Compilation of 'target3.nrx' successful [2 classes]
+Compilation of 'target4.nrx' successful [2 classes]
+Compilation of 'tasktest.nrx' successful
+Compilation of 'watch.nrx' successful
+Compilation of 'tcpecho_watch.nrx' successful
+Compilation of 'tcpecho_bridge1.nrx' successful
+Compilation of 'tcpecho_bridge2.nrx' successful
+Compilation of 'tcpecho.nrx' successful
+Compilation of 'tcpserv.nrx' successful
+Compilation of 'tcpreq.nrx' successful [2 classes]
+Compilation of 'tcpexample_tcplog.nrx' successful [2 classes]
+Compilation of 'tcpexample.nrx' successful
+Compilation of 'tcprec.nrx' successful
+Compilation of 'tcpsend.nrx' successful
+Compilation of 'tcpsmtp_tcppipe.nrx' successful [2 classes]
+Compilation of 'tcpsmtp.nrx' successful
+Compilation of 'tcpsniffer.nrx' successful [2 classes]
+Compilation of 'tcpsniff_tcpsniffer.nrx' successful [3 classes]
+Compilation of 'tcpsniff.nrx' successful
+Compilation of 'tcpreq1.nrx' successful [2 classes]
+Compilation of 'tcpserv1.nrx' successful
+Compilation of 'tcptask_tcplog.nrx' successful
+Compilation of 'tcptask.nrx' successful
+Compilation of 'testpipe_apipe.nrx' successful [2 classes]
+Compilation of 'testpipe.nrx' successful
+Compilation of 'tokenizetest.nrx' successful
+Compilation of 'tokenizetest1.nrx' successful
+Compilation of 'vectort1_vectorp1.nrx' successful
+Compilation of 'vectort1.nrx' successful
